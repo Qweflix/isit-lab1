@@ -69,6 +69,8 @@
 
 ```text
 project/
+├── Diagrams/           # Исходники диаграмм
+├── images/             # Экспортированные изображения схем
 ├── frontend/             # Клиентская часть (HTML/CSS/JS или React/Vue)
 ├── backend/              # Серверная часть (PHP/Node.js/Python)
 │   ├── controllers/      # Обработчики запросов
@@ -80,9 +82,3 @@ project/
 ├── docs/                 # Документация
 └── README.md
 
-### 6. Структура проекта (директории)
-```text
-isit lab3/
-├── Diagrams/           # Исходники диаграмм
-├── images/             # Экспортированные изображения схем
-└── README.md
