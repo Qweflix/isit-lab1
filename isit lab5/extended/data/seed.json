@@ -1,1 +1,7 @@
-
+[
+  { "id": 1, "title": "Сверстать главную страницу", "status": "done", "priority": "high" },
+  { "id": 2, "title": "Подключить форму обратной связи", "status": "in_progress", "priority": "medium" },
+  { "id": 3, "title": "Реализовать валидацию данных", "status": "pending", "priority": "low" },
+  { "id": 4, "title": "Настроить асинхронные запросы REST API", "status": "in_progress", "priority": "high" },
+  { "id": 5, "title": "Оформить отчёт по лабораторной работе", "status": "pending", "priority": "medium" }
+]
