@@ -1,18 +1,18 @@
 <?php
 declare(strict_types=1);
 namespace App\Controllers\Api;
-use App\Models\TaskRepository;
-use App\Models\ProjectRepository;
+use App\Models\TicketRepository;
+use App\Models\CategoryRepository;
 
-final class TaskApiController
+final class TicketApiController
 {
-    private TaskRepository $records;
-    private ProjectRepository $projects;
+    private TicketRepository $records;
+    private CategoryRepository $categories;
 
     public function __construct()
     {
-        $this->records = new TaskRepository();
-        $this->projects = new ProjectRepository();
+        $this->records = new TicketRepository();
+        $this->categories = new CategoryRepository();
     }
 
     public function index(): void
@@ -25,14 +25,20 @@ final class TaskApiController
             }
             $rows = array_values(array_filter($rows, fn (array $row): bool => $row['status'] === $status));
         }
-        if (isset($_GET['project_id'])) {
-            $id = input($_GET, 'project_id');
+        if (isset($_GET['category_id'])) {
+            $id = input($_GET, 'category_id');
             if (filter_var($id, FILTER_VALIDATE_INT, ['options' => ['min_range' => 1]]) === false) {
-                json_error('Ошибка проверки фильтра', 422, ['project_id' => 'Требуется положительный целый номер.']);
+                json_error('Ошибка проверки фильтра', 422, ['category_id' => 'Требуется положительный целый номер.']);
             }
-            $rows = array_values(array_filter($rows, fn (array $row): bool => $row['project_id'] === (int) $id));
+            $rows = array_values(array_filter($rows, fn (array $row): bool => $row['category_id'] === (int) $id));
         }
-        
+        if (isset($_GET['q'])) {
+            if (!is_string($_GET['q'])) {
+                json_error('Ошибка проверки фильтра', 422, ['q' => 'Поиск должен быть строкой.']);
+            }
+            $query = trim($_GET['q']);
+            $rows = array_values(array_filter($rows, fn (array $row): bool => mb_stripos($row['title'], $query, 0, 'UTF-8') !== false));
+        }
         json_response($rows);
     }
 
@@ -52,10 +58,10 @@ final class TaskApiController
 
     public function store(): void
     {
-        $data = array_replace(['status' => 'new', 'priority' => 'medium', 'due_date' => null], $this->clean(json_input()));
+        $data = array_replace(['status' => 'new', 'priority' => 'medium', 'description' => ''], $this->clean(json_input()));
         $this->validate($data);
         $created = $this->records->add($data);
-        header('Location: /api/tasks/' . $created['id']);
+        header('Location: /api/tickets/' . $created['id']);
         json_response($created, 201);
     }
 
@@ -82,7 +88,7 @@ final class TaskApiController
 
     private function clean(array $input): array
     {
-        $data = array_intersect_key($input, array_flip(['title', 'project_id', 'status', 'priority', 'due_date']));
+        $data = array_intersect_key($input, array_flip(['title', 'category_id', 'status', 'priority', 'description']));
         foreach ($data as &$value) {
             if (is_string($value)) {
                 $value = trim($value);
@@ -97,8 +103,8 @@ final class TaskApiController
         if (!is_string($data['title'] ?? null) || mb_strlen($data['title'], 'UTF-8') < 3) {
             $errors['title'] = 'Название должно содержать не менее 3 символов.';
         }
-        if (!is_int($data['project_id'] ?? null) || $this->projects->find($data['project_id']) === null) {
-            $errors['project_id'] = 'Укажите числовой ID существующей связанной записи.';
+        if (!is_int($data['category_id'] ?? null) || $this->categories->find($data['category_id']) === null) {
+            $errors['category_id'] = 'Укажите числовой ID существующей связанной записи.';
         }
         if (!is_string($data['status'] ?? null) || !array_key_exists($data['status'], config('statuses'))) {
             $errors['status'] = 'Недопустимый статус.';
@@ -106,11 +112,8 @@ final class TaskApiController
         if (!is_string($data['priority'] ?? null) || !array_key_exists($data['priority'], config('priorities'))) {
             $errors['priority'] = 'Недопустимый приоритет.';
         }
-        if ($data['due_date'] !== null) {
-            $date = is_string($data['due_date']) ? \DateTimeImmutable::createFromFormat('!Y-m-d', $data['due_date']) : false;
-            if ($date === false || $date->format('Y-m-d') !== $data['due_date']) {
-                $errors['due_date'] = 'Требуется дата YYYY-MM-DD или null.';
-            }
+        if (!is_string($data['description'] ?? null) || $data['description'] === '') {
+            $errors['description'] = 'Опишите проблему.';
         }
         if ($errors !== []) {
             json_error('Ошибка проверки данных', 422, $errors);

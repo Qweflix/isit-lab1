@@ -1,0 +1,282 @@
+[Sun Oct 25 11:32:52 2026] PHP 8.4.24 Development Server (http://127.0.0.1:46147) started
+[Sun Oct 25 11:32:52 2026] 127.0.0.1:51608 Accepted
+[Sun Oct 25 11:32:52 2026] 127.0.0.1:51608 Closed without sending a request; it was probably just an unused speculative preconnection
+[Sun Oct 25 11:32:52 2026] 127.0.0.1:51608 Closing
+[Sun Oct 25 11:32:52 2026] 127.0.0.1:51614 Accepted
+[Sun Oct 25 11:32:52 2026] 127.0.0.1:51614 [200]: GET /api/tickets
+[Sun Oct 25 11:32:52 2026] 127.0.0.1:51614 Closing
+[Sun Oct 25 11:32:52 2026] 127.0.0.1:51616 Accepted
+[Sun Oct 25 11:32:52 2026] 127.0.0.1:51616 [200]: GET /api/tickets/1
+[Sun Oct 25 11:32:52 2026] 127.0.0.1:51616 Closing
+[Sun Oct 25 11:32:52 2026] 127.0.0.1:51626 Accepted
+[Sun Oct 25 11:32:52 2026] 127.0.0.1:51626 [201]: POST /api/tickets
+[Sun Oct 25 11:32:52 2026] 127.0.0.1:51626 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51628 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51628 [200]: GET /api/tickets/7
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51628 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51632 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51632 [200]: PATCH /api/tickets/7
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51632 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51634 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51634 [200]: PUT /api/tickets/7
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51634 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51648 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51648 [204]: DELETE /api/tickets/7
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51648 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51660 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51660 [404]: GET /api/tickets/7
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51660 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51664 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51664 [404]: DELETE /api/tickets/7
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51664 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51672 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51672 [422]: POST /api/tickets
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51672 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51688 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51688 [400]: POST /api/tickets
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51688 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51702 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51702 [404]: GET /api/tickets/99999
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51702 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51706 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51706 [405]: DELETE /api/tickets
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51706 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51712 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51712 [405]: POST /api/tickets/1
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51712 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51726 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51726 [404]: PATCH /api/tickets/99999
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51726 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51730 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51730 [200]: GET /api/categories
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51730 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51734 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51734 [200]: GET /api/categories/1
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51734 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51746 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51746 [201]: POST /api/categories
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51746 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51748 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51748 [200]: GET /api/categories/4
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51748 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51758 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51758 [200]: PATCH /api/categories/4
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51758 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51764 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51764 [200]: PUT /api/categories/4
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51764 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51780 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51780 [204]: DELETE /api/categories/4
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51780 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51784 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51784 [404]: GET /api/categories/4
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51784 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51800 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51800 [404]: DELETE /api/categories/4
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51800 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51812 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51812 [422]: POST /api/categories
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51812 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51822 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51822 [400]: POST /api/categories
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51822 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51838 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51838 [404]: GET /api/categories/99999
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51838 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51840 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51840 [405]: DELETE /api/categories
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51840 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51854 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51854 [405]: POST /api/categories/1
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51854 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51868 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51868 [404]: PATCH /api/categories/99999
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51868 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51872 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51872 [200]: GET /api/staff
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51872 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51882 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51882 [200]: GET /api/staff/1
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51882 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51890 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51890 [201]: POST /api/staff
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51890 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51902 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51902 [200]: GET /api/staff/4
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51902 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51918 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51918 [200]: PATCH /api/staff/4
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51918 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51932 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51932 [200]: PUT /api/staff/4
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51932 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51940 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51940 [204]: DELETE /api/staff/4
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51940 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51942 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51942 [404]: GET /api/staff/4
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51942 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51952 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51952 [404]: DELETE /api/staff/4
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51952 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51968 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51968 [422]: POST /api/staff
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51968 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51982 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51982 [400]: POST /api/staff
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51982 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51994 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51994 [404]: GET /api/staff/99999
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:51994 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52002 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52002 [405]: DELETE /api/staff
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52002 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52010 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52010 [405]: POST /api/staff/1
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52010 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52016 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52016 [404]: PATCH /api/staff/99999
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52016 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52032 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52032 [200]: GET /api/tickets?status=done
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52032 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52036 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52036 [200]: GET /api/tickets?category_id=2
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52036 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52038 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52038 [200]: GET /api/tickets?status=done&category_id=2
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52038 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52048 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52048 [200]: GET /api/tickets?category_id=99999
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52048 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52060 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52060 [200]: GET /api/categories/2/tickets
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52060 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52064 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52064 [404]: GET /api/categories/99999/tickets
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52064 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52080 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52080 [409]: DELETE /api/categories/1
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52080 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52084 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52084 [422]: POST /api/tickets
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52084 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52098 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52098 [422]: POST /api/tickets
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52098 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52102 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52102 [422]: POST /api/tickets
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52102 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52106 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52106 [422]: POST /api/tickets
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52106 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52116 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52116 [422]: POST /api/tickets
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52116 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52132 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52132 [422]: POST /api/tickets
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52132 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52142 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52142 [422]: POST /api/tickets
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52142 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52148 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52148 [422]: POST /api/staff
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52148 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52156 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52156 [422]: PATCH /api/categories/1
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52156 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52172 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52172 [400]: POST /api/tickets
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52172 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52182 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52182 [400]: POST /api/tickets
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52182 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52186 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52186 [400]: POST /api/tickets
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52186 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52196 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52196 [400]: POST /api/tickets
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52196 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52202 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52202 [400]: POST /api/tickets
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52202 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52210 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52210 [400]: POST /api/tickets
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52210 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52218 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52218 [404]: GET /api/missing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52218 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52228 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52228 [404]: GET /api
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52228 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52230 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52230 [404]: GET /api/tickets/abc
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52230 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52242 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52242 [404]: GET /api/tickets/99999999999999999999999999999
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52242 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52246 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52246 [422]: GET /api/tickets?status=unknown
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52246 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52250 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52250 [422]: GET /api/tickets?category_id=abc
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52250 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52262 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52262 [422]: GET /api/tickets?status[]=done
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52262 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52278 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52278 [200]: GET /
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52278 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52290 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52290 [200]: GET /tickets
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52290 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52298 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52298 [200]: GET /categories
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52298 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52314 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52314 [200]: GET /tickets/create
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52314 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52316 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52316 [404]: GET /nonexistent
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52316 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52328 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52328 [404]: GET /storage/tickets.json
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52328 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52334 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52334 [200]: GET /api/tickets?q=%D0%9A%D0%9E%D0%9C%D0%9F%D0%AC%D0%AE%D0%A2%D0%95%D0%A0
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52334 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52346 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52346 [200]: GET /api/tickets?q=%D0%BD%D0%B5%D0%B8%D0%B7%D0%B2%D0%B5%D1%81%D1%82%D0%BD%D0%B0%D1%8F%20%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52346 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52348 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52348 [422]: GET /api/tickets?q[]=x
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52348 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52352 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52352 [404]: GET /api/tasks
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52352 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52354 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52354 [404]: GET /api/projects
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52354 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52368 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52368 [404]: GET /api/users
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52368 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52380 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52380 [404]: GET /api/tasks/1
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52380 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52396 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52396 [404]: GET /api/projects/2/tasks
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52396 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52408 Accepted
+[Sun Oct 25 11:32:53 2026] JsonException: Syntax error in /tmp/lab7-api-c0m485bj/src/app/Models/JsonRepository.php:19
+Stack trace:
+#0 /tmp/lab7-api-c0m485bj/src/app/Models/JsonRepository.php(19): json_decode('invalid JSON', true, 512, 4194304)
+#1 /tmp/lab7-api-c0m485bj/src/app/Models/JsonRepository.php(40): App\Models\JsonRepository->access(false, Object(Closure))
+#2 /tmp/lab7-api-c0m485bj/src/app/Controllers/Api/TicketApiController.php(20): App\Models\JsonRepository->all()
+#3 /tmp/lab7-api-c0m485bj/src/app/Core/Router.php(69): App\Controllers\Api\TicketApiController->index()
+#4 /tmp/lab7-api-c0m485bj/src/public/index.php(12): App\Core\Router->dispatch('GET', '/api/tickets')
+#5 {main}
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52408 [500]: GET /api/tickets
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52408 Closing
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52412 Accepted
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52412 [200]: GET /api/tickets
+[Sun Oct 25 11:32:53 2026] 127.0.0.1:52412 Closing

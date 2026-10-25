@@ -1,0 +1,996 @@
+[
+  {
+    "label": "GET /api/tickets",
+    "method": "GET",
+    "path": "/api/tickets",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X GET http://127.0.0.1:46147/api/tickets",
+    "status": 200,
+    "headers": "HTTP/1.1 200 OK\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:52 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "[{\"id\":1,\"category_id\":1,\"title\":\"Не включается рабочий компьютер\",\"description\":\"После нажатия кнопки питания индикаторы не загораются.\",\"status\":\"new\",\"priority\":\"high\"},{\"id\":2,\"category_id\":2,\"title\":\"Ошибка запуска офисного приложения\",\"description\":\"При открытии документа появляется сообщение об ошибке лицензии.\",\"status\":\"in_progress\",\"priority\":\"medium\"},{\"id\":3,\"category_id\":3,\"title\":\"Восстановление доступа к почте\",\"description\":\"После смены пароля настроен вход в корпоративную почту.\",\"status\":\"done\",\"priority\":\"high\"},{\"id\":4,\"category_id\":1,\"title\":\"Принтер не печатает документы\",\"description\":\"Документы остаются в очереди печати на втором этаже.\",\"status\":\"in_progress\",\"priority\":\"medium\"},{\"id\":5,\"category_id\":3,\"title\":\"Нет подключения к сети\",\"description\":\"На рабочем месте пропало подключение к внутренним ресурсам.\",\"status\":\"new\",\"priority\":\"critical\"},{\"id\":6,\"category_id\":2,\"title\":\"Обновление антивируса\",\"description\":\"Установлены обновления и выполнена проверка компьютера.\",\"status\":\"done\",\"priority\":\"low\"}]"
+  },
+  {
+    "label": "GET /api/tickets/1",
+    "method": "GET",
+    "path": "/api/tickets/1",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X GET http://127.0.0.1:46147/api/tickets/1",
+    "status": 200,
+    "headers": "HTTP/1.1 200 OK\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:52 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"id\":1,\"category_id\":1,\"title\":\"Не включается рабочий компьютер\",\"description\":\"После нажатия кнопки питания индикаторы не загораются.\",\"status\":\"new\",\"priority\":\"high\"}"
+  },
+  {
+    "label": "POST /api/tickets",
+    "method": "POST",
+    "path": "/api/tickets",
+    "request": {
+      "title": "Проверка создания через API",
+      "category_id": 1,
+      "description": "Приложение не открывается на рабочем месте.",
+      "id": 999,
+      "unexpected": "ignore"
+    },
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X POST http://127.0.0.1:46147/api/tickets -H 'Content-Type: application/json' --data-raw '{\"title\": \"Проверка создания через API\", \"category_id\": 1, \"description\": \"Приложение не открывается на рабочем месте.\", \"id\": 999, \"unexpected\": \"ignore\"}'",
+    "status": 201,
+    "headers": "HTTP/1.1 201 Created\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:52 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nLocation: /api/tickets/7\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"status\":\"new\",\"priority\":\"medium\",\"description\":\"Приложение не открывается на рабочем месте.\",\"title\":\"Проверка создания через API\",\"category_id\":1,\"id\":7}"
+  },
+  {
+    "label": "GET /api/tickets/7",
+    "method": "GET",
+    "path": "/api/tickets/7",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X GET http://127.0.0.1:46147/api/tickets/7",
+    "status": 200,
+    "headers": "HTTP/1.1 200 OK\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"status\":\"new\",\"priority\":\"medium\",\"description\":\"Приложение не открывается на рабочем месте.\",\"title\":\"Проверка создания через API\",\"category_id\":1,\"id\":7}"
+  },
+  {
+    "label": "PATCH /api/tickets/7",
+    "method": "PATCH",
+    "path": "/api/tickets/7",
+    "request": {
+      "status": "done",
+      "id": 12345
+    },
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X PATCH http://127.0.0.1:46147/api/tickets/7 -H 'Content-Type: application/json' --data-raw '{\"status\": \"done\", \"id\": 12345}'",
+    "status": 200,
+    "headers": "HTTP/1.1 200 OK\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"status\":\"done\",\"priority\":\"medium\",\"description\":\"Приложение не открывается на рабочем месте.\",\"title\":\"Проверка создания через API\",\"category_id\":1,\"id\":7}"
+  },
+  {
+    "label": "PUT /api/tickets/7",
+    "method": "PUT",
+    "path": "/api/tickets/7",
+    "request": {
+      "status": "done"
+    },
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X PUT http://127.0.0.1:46147/api/tickets/7 -H 'Content-Type: application/json' --data-raw '{\"status\": \"done\"}'",
+    "status": 200,
+    "headers": "HTTP/1.1 200 OK\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"status\":\"done\",\"priority\":\"medium\",\"description\":\"Приложение не открывается на рабочем месте.\",\"title\":\"Проверка создания через API\",\"category_id\":1,\"id\":7}"
+  },
+  {
+    "label": "DELETE /api/tickets/7",
+    "method": "DELETE",
+    "path": "/api/tickets/7",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X DELETE http://127.0.0.1:46147/api/tickets/7",
+    "status": 204,
+    "headers": "HTTP/1.1 204 No Content\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-type: text/html; charset=UTF-8\n\n",
+    "body": ""
+  },
+  {
+    "label": "GET после удаления tickets",
+    "method": "GET",
+    "path": "/api/tickets/7",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X GET http://127.0.0.1:46147/api/tickets/7",
+    "status": 404,
+    "headers": "HTTP/1.1 404 Not Found\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Запись не найдена\",\"errors\":{}}"
+  },
+  {
+    "label": "Повторное удаление tickets",
+    "method": "DELETE",
+    "path": "/api/tickets/7",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X DELETE http://127.0.0.1:46147/api/tickets/7",
+    "status": 404,
+    "headers": "HTTP/1.1 404 Not Found\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Запись не найдена\",\"errors\":{}}"
+  },
+  {
+    "label": "Пустые поля tickets",
+    "method": "POST",
+    "path": "/api/tickets",
+    "request": {},
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X POST http://127.0.0.1:46147/api/tickets -H 'Content-Type: application/json' --data-raw '{}'",
+    "status": 422,
+    "headers": "HTTP/1.1 422 Unknown Status Code\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Ошибка проверки данных\",\"errors\":{\"title\":\"Название должно содержать не менее 3 символов.\",\"category_id\":\"Укажите числовой ID существующей связанной записи.\",\"description\":\"Опишите проблему.\"}}"
+  },
+  {
+    "label": "Некорректный JSON tickets",
+    "method": "POST",
+    "path": "/api/tickets",
+    "request": null,
+    "raw": "абс",
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X POST http://127.0.0.1:46147/api/tickets -H 'Content-Type: application/json' --data-raw 'абс'",
+    "status": 400,
+    "headers": "HTTP/1.1 400 Bad Request\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Некорректный JSON\",\"errors\":{}}"
+  },
+  {
+    "label": "GET /api/tickets/99999",
+    "method": "GET",
+    "path": "/api/tickets/99999",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X GET http://127.0.0.1:46147/api/tickets/99999",
+    "status": 404,
+    "headers": "HTTP/1.1 404 Not Found\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Запись не найдена\",\"errors\":{}}"
+  },
+  {
+    "label": "DELETE /api/tickets",
+    "method": "DELETE",
+    "path": "/api/tickets",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X DELETE http://127.0.0.1:46147/api/tickets",
+    "status": 405,
+    "headers": "HTTP/1.1 405 Method Not Allowed\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nAllow: GET, POST\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Метод не разрешён\",\"errors\":{}}"
+  },
+  {
+    "label": "POST /api/tickets/1",
+    "method": "POST",
+    "path": "/api/tickets/1",
+    "request": {},
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X POST http://127.0.0.1:46147/api/tickets/1 -H 'Content-Type: application/json' --data-raw '{}'",
+    "status": 405,
+    "headers": "HTTP/1.1 405 Method Not Allowed\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nAllow: GET, PUT, PATCH, DELETE\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Метод не разрешён\",\"errors\":{}}"
+  },
+  {
+    "label": "PATCH /api/tickets/99999",
+    "method": "PATCH",
+    "path": "/api/tickets/99999",
+    "request": {},
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X PATCH http://127.0.0.1:46147/api/tickets/99999 -H 'Content-Type: application/json' --data-raw '{}'",
+    "status": 404,
+    "headers": "HTTP/1.1 404 Not Found\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Запись не найдена\",\"errors\":{}}"
+  },
+  {
+    "label": "GET /api/categories",
+    "method": "GET",
+    "path": "/api/categories",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X GET http://127.0.0.1:46147/api/categories",
+    "status": 200,
+    "headers": "HTTP/1.1 200 OK\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "[{\"id\":1,\"title\":\"Оборудование\",\"description\":\"Компьютеры, принтеры и периферийные устройства.\"},{\"id\":2,\"title\":\"Программное обеспечение\",\"description\":\"Установка, обновление и ошибки приложений.\"},{\"id\":3,\"title\":\"Сеть и доступы\",\"description\":\"Сетевые подключения, учётные записи и права доступа.\"}]"
+  },
+  {
+    "label": "GET /api/categories/1",
+    "method": "GET",
+    "path": "/api/categories/1",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X GET http://127.0.0.1:46147/api/categories/1",
+    "status": 200,
+    "headers": "HTTP/1.1 200 OK\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"id\":1,\"title\":\"Оборудование\",\"description\":\"Компьютеры, принтеры и периферийные устройства.\"}"
+  },
+  {
+    "label": "POST /api/categories",
+    "method": "POST",
+    "path": "/api/categories",
+    "request": {
+      "title": "Дополнительная категория",
+      "description": "Создано для проверки CRUD.",
+      "id": 999,
+      "unexpected": "ignore"
+    },
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X POST http://127.0.0.1:46147/api/categories -H 'Content-Type: application/json' --data-raw '{\"title\": \"Дополнительная категория\", \"description\": \"Создано для проверки CRUD.\", \"id\": 999, \"unexpected\": \"ignore\"}'",
+    "status": 201,
+    "headers": "HTTP/1.1 201 Created\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nLocation: /api/categories/4\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"description\":\"Создано для проверки CRUD.\",\"title\":\"Дополнительная категория\",\"id\":4}"
+  },
+  {
+    "label": "GET /api/categories/4",
+    "method": "GET",
+    "path": "/api/categories/4",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X GET http://127.0.0.1:46147/api/categories/4",
+    "status": 200,
+    "headers": "HTTP/1.1 200 OK\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"description\":\"Создано для проверки CRUD.\",\"title\":\"Дополнительная категория\",\"id\":4}"
+  },
+  {
+    "label": "PATCH /api/categories/4",
+    "method": "PATCH",
+    "path": "/api/categories/4",
+    "request": {
+      "description": "Описание обновлено.",
+      "id": 12345
+    },
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X PATCH http://127.0.0.1:46147/api/categories/4 -H 'Content-Type: application/json' --data-raw '{\"description\": \"Описание обновлено.\", \"id\": 12345}'",
+    "status": 200,
+    "headers": "HTTP/1.1 200 OK\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"description\":\"Описание обновлено.\",\"title\":\"Дополнительная категория\",\"id\":4}"
+  },
+  {
+    "label": "PUT /api/categories/4",
+    "method": "PUT",
+    "path": "/api/categories/4",
+    "request": {
+      "description": "Описание обновлено."
+    },
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X PUT http://127.0.0.1:46147/api/categories/4 -H 'Content-Type: application/json' --data-raw '{\"description\": \"Описание обновлено.\"}'",
+    "status": 200,
+    "headers": "HTTP/1.1 200 OK\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"description\":\"Описание обновлено.\",\"title\":\"Дополнительная категория\",\"id\":4}"
+  },
+  {
+    "label": "DELETE /api/categories/4",
+    "method": "DELETE",
+    "path": "/api/categories/4",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X DELETE http://127.0.0.1:46147/api/categories/4",
+    "status": 204,
+    "headers": "HTTP/1.1 204 No Content\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-type: text/html; charset=UTF-8\n\n",
+    "body": ""
+  },
+  {
+    "label": "GET после удаления categories",
+    "method": "GET",
+    "path": "/api/categories/4",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X GET http://127.0.0.1:46147/api/categories/4",
+    "status": 404,
+    "headers": "HTTP/1.1 404 Not Found\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Запись не найдена\",\"errors\":{}}"
+  },
+  {
+    "label": "Повторное удаление categories",
+    "method": "DELETE",
+    "path": "/api/categories/4",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X DELETE http://127.0.0.1:46147/api/categories/4",
+    "status": 404,
+    "headers": "HTTP/1.1 404 Not Found\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Запись не найдена\",\"errors\":{}}"
+  },
+  {
+    "label": "Пустые поля categories",
+    "method": "POST",
+    "path": "/api/categories",
+    "request": {},
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X POST http://127.0.0.1:46147/api/categories -H 'Content-Type: application/json' --data-raw '{}'",
+    "status": 422,
+    "headers": "HTTP/1.1 422 Unknown Status Code\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Ошибка проверки данных\",\"errors\":{\"title\":\"Название должно содержать не менее 3 символов.\"}}"
+  },
+  {
+    "label": "Некорректный JSON categories",
+    "method": "POST",
+    "path": "/api/categories",
+    "request": null,
+    "raw": "абс",
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X POST http://127.0.0.1:46147/api/categories -H 'Content-Type: application/json' --data-raw 'абс'",
+    "status": 400,
+    "headers": "HTTP/1.1 400 Bad Request\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Некорректный JSON\",\"errors\":{}}"
+  },
+  {
+    "label": "GET /api/categories/99999",
+    "method": "GET",
+    "path": "/api/categories/99999",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X GET http://127.0.0.1:46147/api/categories/99999",
+    "status": 404,
+    "headers": "HTTP/1.1 404 Not Found\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Запись не найдена\",\"errors\":{}}"
+  },
+  {
+    "label": "DELETE /api/categories",
+    "method": "DELETE",
+    "path": "/api/categories",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X DELETE http://127.0.0.1:46147/api/categories",
+    "status": 405,
+    "headers": "HTTP/1.1 405 Method Not Allowed\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nAllow: GET, POST\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Метод не разрешён\",\"errors\":{}}"
+  },
+  {
+    "label": "POST /api/categories/1",
+    "method": "POST",
+    "path": "/api/categories/1",
+    "request": {},
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X POST http://127.0.0.1:46147/api/categories/1 -H 'Content-Type: application/json' --data-raw '{}'",
+    "status": 405,
+    "headers": "HTTP/1.1 405 Method Not Allowed\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nAllow: GET, PUT, PATCH, DELETE\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Метод не разрешён\",\"errors\":{}}"
+  },
+  {
+    "label": "PATCH /api/categories/99999",
+    "method": "PATCH",
+    "path": "/api/categories/99999",
+    "request": {},
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X PATCH http://127.0.0.1:46147/api/categories/99999 -H 'Content-Type: application/json' --data-raw '{}'",
+    "status": 404,
+    "headers": "HTTP/1.1 404 Not Found\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Запись не найдена\",\"errors\":{}}"
+  },
+  {
+    "label": "GET /api/staff",
+    "method": "GET",
+    "path": "/api/staff",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X GET http://127.0.0.1:46147/api/staff",
+    "status": 200,
+    "headers": "HTTP/1.1 200 OK\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "[{\"id\":1,\"name\":\"Алексей Смирнов\",\"email\":\"alexey@example.test\",\"role\":\"Инженер поддержки\"},{\"id\":2,\"name\":\"Мария Десяк\",\"email\":\"maria@example.test\",\"role\":\"Специалист по программному обеспечению\"},{\"id\":3,\"name\":\"Дмитрий Кузнецов\",\"email\":\"dmitry@example.test\",\"role\":\"Системный администратор\"}]"
+  },
+  {
+    "label": "GET /api/staff/1",
+    "method": "GET",
+    "path": "/api/staff/1",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X GET http://127.0.0.1:46147/api/staff/1",
+    "status": 200,
+    "headers": "HTTP/1.1 200 OK\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"id\":1,\"name\":\"Алексей Смирнов\",\"email\":\"alexey@example.test\",\"role\":\"Инженер поддержки\"}"
+  },
+  {
+    "label": "POST /api/staff",
+    "method": "POST",
+    "path": "/api/staff",
+    "request": {
+      "name": "Ирина Волкова",
+      "email": "irina@example.test",
+      "role": "Инженер поддержки",
+      "id": 999,
+      "unexpected": "ignore"
+    },
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X POST http://127.0.0.1:46147/api/staff -H 'Content-Type: application/json' --data-raw '{\"name\": \"Ирина Волкова\", \"email\": \"irina@example.test\", \"role\": \"Инженер поддержки\", \"id\": 999, \"unexpected\": \"ignore\"}'",
+    "status": 201,
+    "headers": "HTTP/1.1 201 Created\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nLocation: /api/staff/4\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"role\":\"Инженер поддержки\",\"name\":\"Ирина Волкова\",\"email\":\"irina@example.test\",\"id\":4}"
+  },
+  {
+    "label": "GET /api/staff/4",
+    "method": "GET",
+    "path": "/api/staff/4",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X GET http://127.0.0.1:46147/api/staff/4",
+    "status": 200,
+    "headers": "HTTP/1.1 200 OK\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"role\":\"Инженер поддержки\",\"name\":\"Ирина Волкова\",\"email\":\"irina@example.test\",\"id\":4}"
+  },
+  {
+    "label": "PATCH /api/staff/4",
+    "method": "PATCH",
+    "path": "/api/staff/4",
+    "request": {
+      "role": "Старший инженер",
+      "id": 12345
+    },
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X PATCH http://127.0.0.1:46147/api/staff/4 -H 'Content-Type: application/json' --data-raw '{\"role\": \"Старший инженер\", \"id\": 12345}'",
+    "status": 200,
+    "headers": "HTTP/1.1 200 OK\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"role\":\"Старший инженер\",\"name\":\"Ирина Волкова\",\"email\":\"irina@example.test\",\"id\":4}"
+  },
+  {
+    "label": "PUT /api/staff/4",
+    "method": "PUT",
+    "path": "/api/staff/4",
+    "request": {
+      "role": "Старший инженер"
+    },
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X PUT http://127.0.0.1:46147/api/staff/4 -H 'Content-Type: application/json' --data-raw '{\"role\": \"Старший инженер\"}'",
+    "status": 200,
+    "headers": "HTTP/1.1 200 OK\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"role\":\"Старший инженер\",\"name\":\"Ирина Волкова\",\"email\":\"irina@example.test\",\"id\":4}"
+  },
+  {
+    "label": "DELETE /api/staff/4",
+    "method": "DELETE",
+    "path": "/api/staff/4",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X DELETE http://127.0.0.1:46147/api/staff/4",
+    "status": 204,
+    "headers": "HTTP/1.1 204 No Content\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-type: text/html; charset=UTF-8\n\n",
+    "body": ""
+  },
+  {
+    "label": "GET после удаления staff",
+    "method": "GET",
+    "path": "/api/staff/4",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X GET http://127.0.0.1:46147/api/staff/4",
+    "status": 404,
+    "headers": "HTTP/1.1 404 Not Found\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Запись не найдена\",\"errors\":{}}"
+  },
+  {
+    "label": "Повторное удаление staff",
+    "method": "DELETE",
+    "path": "/api/staff/4",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X DELETE http://127.0.0.1:46147/api/staff/4",
+    "status": 404,
+    "headers": "HTTP/1.1 404 Not Found\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Запись не найдена\",\"errors\":{}}"
+  },
+  {
+    "label": "Пустые поля staff",
+    "method": "POST",
+    "path": "/api/staff",
+    "request": {},
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X POST http://127.0.0.1:46147/api/staff -H 'Content-Type: application/json' --data-raw '{}'",
+    "status": 422,
+    "headers": "HTTP/1.1 422 Unknown Status Code\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Ошибка проверки данных\",\"errors\":{\"name\":\"Имя должно содержать не менее 3 символов.\",\"email\":\"Укажите корректный email.\"}}"
+  },
+  {
+    "label": "Некорректный JSON staff",
+    "method": "POST",
+    "path": "/api/staff",
+    "request": null,
+    "raw": "абс",
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X POST http://127.0.0.1:46147/api/staff -H 'Content-Type: application/json' --data-raw 'абс'",
+    "status": 400,
+    "headers": "HTTP/1.1 400 Bad Request\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Некорректный JSON\",\"errors\":{}}"
+  },
+  {
+    "label": "GET /api/staff/99999",
+    "method": "GET",
+    "path": "/api/staff/99999",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X GET http://127.0.0.1:46147/api/staff/99999",
+    "status": 404,
+    "headers": "HTTP/1.1 404 Not Found\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Запись не найдена\",\"errors\":{}}"
+  },
+  {
+    "label": "DELETE /api/staff",
+    "method": "DELETE",
+    "path": "/api/staff",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X DELETE http://127.0.0.1:46147/api/staff",
+    "status": 405,
+    "headers": "HTTP/1.1 405 Method Not Allowed\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nAllow: GET, POST\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Метод не разрешён\",\"errors\":{}}"
+  },
+  {
+    "label": "POST /api/staff/1",
+    "method": "POST",
+    "path": "/api/staff/1",
+    "request": {},
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X POST http://127.0.0.1:46147/api/staff/1 -H 'Content-Type: application/json' --data-raw '{}'",
+    "status": 405,
+    "headers": "HTTP/1.1 405 Method Not Allowed\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nAllow: GET, PUT, PATCH, DELETE\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Метод не разрешён\",\"errors\":{}}"
+  },
+  {
+    "label": "PATCH /api/staff/99999",
+    "method": "PATCH",
+    "path": "/api/staff/99999",
+    "request": {},
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X PATCH http://127.0.0.1:46147/api/staff/99999 -H 'Content-Type: application/json' --data-raw '{}'",
+    "status": 404,
+    "headers": "HTTP/1.1 404 Not Found\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Запись не найдена\",\"errors\":{}}"
+  },
+  {
+    "label": "GET /api/tickets?status=done",
+    "method": "GET",
+    "path": "/api/tickets?status=done",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X GET 'http://127.0.0.1:46147/api/tickets?status=done'",
+    "status": 200,
+    "headers": "HTTP/1.1 200 OK\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "[{\"id\":3,\"category_id\":3,\"title\":\"Восстановление доступа к почте\",\"description\":\"После смены пароля настроен вход в корпоративную почту.\",\"status\":\"done\",\"priority\":\"high\"},{\"id\":6,\"category_id\":2,\"title\":\"Обновление антивируса\",\"description\":\"Установлены обновления и выполнена проверка компьютера.\",\"status\":\"done\",\"priority\":\"low\"}]"
+  },
+  {
+    "label": "GET /api/tickets?category_id=2",
+    "method": "GET",
+    "path": "/api/tickets?category_id=2",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X GET 'http://127.0.0.1:46147/api/tickets?category_id=2'",
+    "status": 200,
+    "headers": "HTTP/1.1 200 OK\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "[{\"id\":2,\"category_id\":2,\"title\":\"Ошибка запуска офисного приложения\",\"description\":\"При открытии документа появляется сообщение об ошибке лицензии.\",\"status\":\"in_progress\",\"priority\":\"medium\"},{\"id\":6,\"category_id\":2,\"title\":\"Обновление антивируса\",\"description\":\"Установлены обновления и выполнена проверка компьютера.\",\"status\":\"done\",\"priority\":\"low\"}]"
+  },
+  {
+    "label": "GET /api/tickets?status=done&category_id=2",
+    "method": "GET",
+    "path": "/api/tickets?status=done&category_id=2",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X GET 'http://127.0.0.1:46147/api/tickets?status=done&category_id=2'",
+    "status": 200,
+    "headers": "HTTP/1.1 200 OK\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "[{\"id\":6,\"category_id\":2,\"title\":\"Обновление антивируса\",\"description\":\"Установлены обновления и выполнена проверка компьютера.\",\"status\":\"done\",\"priority\":\"low\"}]"
+  },
+  {
+    "label": "GET /api/tickets?category_id=99999",
+    "method": "GET",
+    "path": "/api/tickets?category_id=99999",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X GET 'http://127.0.0.1:46147/api/tickets?category_id=99999'",
+    "status": 200,
+    "headers": "HTTP/1.1 200 OK\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "[]"
+  },
+  {
+    "label": "GET /api/categories/2/tickets",
+    "method": "GET",
+    "path": "/api/categories/2/tickets",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X GET http://127.0.0.1:46147/api/categories/2/tickets",
+    "status": 200,
+    "headers": "HTTP/1.1 200 OK\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "[{\"id\":2,\"category_id\":2,\"title\":\"Ошибка запуска офисного приложения\",\"description\":\"При открытии документа появляется сообщение об ошибке лицензии.\",\"status\":\"in_progress\",\"priority\":\"medium\"},{\"id\":6,\"category_id\":2,\"title\":\"Обновление антивируса\",\"description\":\"Установлены обновления и выполнена проверка компьютера.\",\"status\":\"done\",\"priority\":\"low\"}]"
+  },
+  {
+    "label": "GET /api/categories/99999/tickets",
+    "method": "GET",
+    "path": "/api/categories/99999/tickets",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X GET http://127.0.0.1:46147/api/categories/99999/tickets",
+    "status": 404,
+    "headers": "HTTP/1.1 404 Not Found\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Запись не найдена\",\"errors\":{}}"
+  },
+  {
+    "label": "DELETE /api/categories/1",
+    "method": "DELETE",
+    "path": "/api/categories/1",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X DELETE http://127.0.0.1:46147/api/categories/1",
+    "status": 409,
+    "headers": "HTTP/1.1 409 Conflict\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Нельзя удалить категорию, пока в ней есть заявки\",\"errors\":{}}"
+  },
+  {
+    "label": "Неверное поле title = Да",
+    "method": "POST",
+    "path": "/api/tickets",
+    "request": {
+      "title": "Да",
+      "category_id": 1,
+      "description": "Описание обращения."
+    },
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X POST http://127.0.0.1:46147/api/tickets -H 'Content-Type: application/json' --data-raw '{\"title\": \"Да\", \"category_id\": 1, \"description\": \"Описание обращения.\"}'",
+    "status": 422,
+    "headers": "HTTP/1.1 422 Unknown Status Code\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Ошибка проверки данных\",\"errors\":{\"title\":\"Название должно содержать не менее 3 символов.\"}}"
+  },
+  {
+    "label": "Неверное поле category_id = 1",
+    "method": "POST",
+    "path": "/api/tickets",
+    "request": {
+      "title": "Проверка валидации",
+      "category_id": "1",
+      "description": "Описание обращения."
+    },
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X POST http://127.0.0.1:46147/api/tickets -H 'Content-Type: application/json' --data-raw '{\"title\": \"Проверка валидации\", \"category_id\": \"1\", \"description\": \"Описание обращения.\"}'",
+    "status": 422,
+    "headers": "HTTP/1.1 422 Unknown Status Code\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Ошибка проверки данных\",\"errors\":{\"category_id\":\"Укажите числовой ID существующей связанной записи.\"}}"
+  },
+  {
+    "label": "Неверное поле category_id = 99999",
+    "method": "POST",
+    "path": "/api/tickets",
+    "request": {
+      "title": "Проверка валидации",
+      "category_id": 99999,
+      "description": "Описание обращения."
+    },
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X POST http://127.0.0.1:46147/api/tickets -H 'Content-Type: application/json' --data-raw '{\"title\": \"Проверка валидации\", \"category_id\": 99999, \"description\": \"Описание обращения.\"}'",
+    "status": 422,
+    "headers": "HTTP/1.1 422 Unknown Status Code\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Ошибка проверки данных\",\"errors\":{\"category_id\":\"Укажите числовой ID существующей связанной записи.\"}}"
+  },
+  {
+    "label": "Неверное поле status = unknown",
+    "method": "POST",
+    "path": "/api/tickets",
+    "request": {
+      "title": "Проверка валидации",
+      "category_id": 1,
+      "description": "Описание обращения.",
+      "status": "unknown"
+    },
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X POST http://127.0.0.1:46147/api/tickets -H 'Content-Type: application/json' --data-raw '{\"title\": \"Проверка валидации\", \"category_id\": 1, \"description\": \"Описание обращения.\", \"status\": \"unknown\"}'",
+    "status": 422,
+    "headers": "HTTP/1.1 422 Unknown Status Code\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Ошибка проверки данных\",\"errors\":{\"status\":\"Недопустимый статус.\"}}"
+  },
+  {
+    "label": "Неверное поле priority = ['high']",
+    "method": "POST",
+    "path": "/api/tickets",
+    "request": {
+      "title": "Проверка валидации",
+      "category_id": 1,
+      "description": "Описание обращения.",
+      "priority": [
+        "high"
+      ]
+    },
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X POST http://127.0.0.1:46147/api/tickets -H 'Content-Type: application/json' --data-raw '{\"title\": \"Проверка валидации\", \"category_id\": 1, \"description\": \"Описание обращения.\", \"priority\": [\"high\"]}'",
+    "status": 422,
+    "headers": "HTTP/1.1 422 Unknown Status Code\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Ошибка проверки данных\",\"errors\":{\"priority\":\"Недопустимый приоритет.\"}}"
+  },
+  {
+    "label": "Неверное поле title = None",
+    "method": "POST",
+    "path": "/api/tickets",
+    "request": {
+      "title": null,
+      "category_id": 1,
+      "description": "Описание обращения."
+    },
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X POST http://127.0.0.1:46147/api/tickets -H 'Content-Type: application/json' --data-raw '{\"title\": null, \"category_id\": 1, \"description\": \"Описание обращения.\"}'",
+    "status": 422,
+    "headers": "HTTP/1.1 422 Unknown Status Code\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Ошибка проверки данных\",\"errors\":{\"title\":\"Название должно содержать не менее 3 символов.\"}}"
+  },
+  {
+    "label": "Неверное поле description = ",
+    "method": "POST",
+    "path": "/api/tickets",
+    "request": {
+      "title": "Проверка валидации",
+      "category_id": 1,
+      "description": ""
+    },
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X POST http://127.0.0.1:46147/api/tickets -H 'Content-Type: application/json' --data-raw '{\"title\": \"Проверка валидации\", \"category_id\": 1, \"description\": \"\"}'",
+    "status": 422,
+    "headers": "HTTP/1.1 422 Unknown Status Code\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Ошибка проверки данных\",\"errors\":{\"description\":\"Опишите проблему.\"}}"
+  },
+  {
+    "label": "POST /api/staff",
+    "method": "POST",
+    "path": "/api/staff",
+    "request": {
+      "name": 12,
+      "email": "bad",
+      "role": []
+    },
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X POST http://127.0.0.1:46147/api/staff -H 'Content-Type: application/json' --data-raw '{\"name\": 12, \"email\": \"bad\", \"role\": []}'",
+    "status": 422,
+    "headers": "HTTP/1.1 422 Unknown Status Code\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Ошибка проверки данных\",\"errors\":{\"name\":\"Имя должно содержать не менее 3 символов.\",\"email\":\"Укажите корректный email.\",\"role\":\"Укажите должность.\"}}"
+  },
+  {
+    "label": "PATCH /api/categories/1",
+    "method": "PATCH",
+    "path": "/api/categories/1",
+    "request": {
+      "title": []
+    },
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X PATCH http://127.0.0.1:46147/api/categories/1 -H 'Content-Type: application/json' --data-raw '{\"title\": []}'",
+    "status": 422,
+    "headers": "HTTP/1.1 422 Unknown Status Code\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Ошибка проверки данных\",\"errors\":{\"title\":\"Название должно содержать не менее 3 символов.\"}}"
+  },
+  {
+    "label": "Неверное тело: '{\"title\":'",
+    "method": "POST",
+    "path": "/api/tickets",
+    "request": null,
+    "raw": "{\"title\":",
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X POST http://127.0.0.1:46147/api/tickets -H 'Content-Type: application/json' --data-raw '{\"title\":'",
+    "status": 400,
+    "headers": "HTTP/1.1 400 Bad Request\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Некорректный JSON\",\"errors\":{}}"
+  },
+  {
+    "label": "Неверное тело: '[]'",
+    "method": "POST",
+    "path": "/api/tickets",
+    "request": null,
+    "raw": "[]",
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X POST http://127.0.0.1:46147/api/tickets -H 'Content-Type: application/json' --data-raw '[]'",
+    "status": 400,
+    "headers": "HTTP/1.1 400 Bad Request\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Тело запроса должно быть JSON-объектом\",\"errors\":{}}"
+  },
+  {
+    "label": "Неверное тело: 'null'",
+    "method": "POST",
+    "path": "/api/tickets",
+    "request": null,
+    "raw": "null",
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X POST http://127.0.0.1:46147/api/tickets -H 'Content-Type: application/json' --data-raw null",
+    "status": 400,
+    "headers": "HTTP/1.1 400 Bad Request\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Тело запроса должно быть JSON-объектом\",\"errors\":{}}"
+  },
+  {
+    "label": "Неверное тело: '\"строка\"'",
+    "method": "POST",
+    "path": "/api/tickets",
+    "request": null,
+    "raw": "\"строка\"",
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X POST http://127.0.0.1:46147/api/tickets -H 'Content-Type: application/json' --data-raw '\"строка\"'",
+    "status": 400,
+    "headers": "HTTP/1.1 400 Bad Request\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Тело запроса должно быть JSON-объектом\",\"errors\":{}}"
+  },
+  {
+    "label": "Неверное тело: '1'",
+    "method": "POST",
+    "path": "/api/tickets",
+    "request": null,
+    "raw": "1",
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X POST http://127.0.0.1:46147/api/tickets -H 'Content-Type: application/json' --data-raw 1",
+    "status": 400,
+    "headers": "HTTP/1.1 400 Bad Request\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Тело запроса должно быть JSON-объектом\",\"errors\":{}}"
+  },
+  {
+    "label": "Неверное тело: ''",
+    "method": "POST",
+    "path": "/api/tickets",
+    "request": null,
+    "raw": "",
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X POST http://127.0.0.1:46147/api/tickets -H 'Content-Type: application/json' --data-raw ''",
+    "status": 400,
+    "headers": "HTTP/1.1 400 Bad Request\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Некорректный JSON\",\"errors\":{}}"
+  },
+  {
+    "label": "GET /api/missing",
+    "method": "GET",
+    "path": "/api/missing",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X GET http://127.0.0.1:46147/api/missing",
+    "status": 404,
+    "headers": "HTTP/1.1 404 Not Found\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Ресурс не найден\",\"errors\":{}}"
+  },
+  {
+    "label": "GET /api",
+    "method": "GET",
+    "path": "/api",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X GET http://127.0.0.1:46147/api",
+    "status": 404,
+    "headers": "HTTP/1.1 404 Not Found\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Ресурс не найден\",\"errors\":{}}"
+  },
+  {
+    "label": "GET /api/tickets/abc",
+    "method": "GET",
+    "path": "/api/tickets/abc",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X GET http://127.0.0.1:46147/api/tickets/abc",
+    "status": 404,
+    "headers": "HTTP/1.1 404 Not Found\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Ресурс не найден\",\"errors\":{}}"
+  },
+  {
+    "label": "GET /api/tickets/99999999999999999999999999999",
+    "method": "GET",
+    "path": "/api/tickets/99999999999999999999999999999",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X GET http://127.0.0.1:46147/api/tickets/99999999999999999999999999999",
+    "status": 404,
+    "headers": "HTTP/1.1 404 Not Found\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Ресурс не найден\",\"errors\":{}}"
+  },
+  {
+    "label": "GET /api/tickets?status=unknown",
+    "method": "GET",
+    "path": "/api/tickets?status=unknown",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X GET 'http://127.0.0.1:46147/api/tickets?status=unknown'",
+    "status": 422,
+    "headers": "HTTP/1.1 422 Unknown Status Code\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Ошибка проверки фильтра\",\"errors\":{\"status\":\"Недопустимый статус.\"}}"
+  },
+  {
+    "label": "GET /api/tickets?category_id=abc",
+    "method": "GET",
+    "path": "/api/tickets?category_id=abc",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X GET 'http://127.0.0.1:46147/api/tickets?category_id=abc'",
+    "status": 422,
+    "headers": "HTTP/1.1 422 Unknown Status Code\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Ошибка проверки фильтра\",\"errors\":{\"category_id\":\"Требуется положительный целый номер.\"}}"
+  },
+  {
+    "label": "GET /api/tickets?status[]=done",
+    "method": "GET",
+    "path": "/api/tickets?status[]=done",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X GET 'http://127.0.0.1:46147/api/tickets?status[]=done'",
+    "status": 422,
+    "headers": "HTTP/1.1 422 Unknown Status Code\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Ошибка проверки фильтра\",\"errors\":{\"status\":\"Недопустимый статус.\"}}"
+  },
+  {
+    "label": "GET /api/tickets?q=%D0%9A%D0%9E%D0%9C%D0%9F%D0%AC%D0%AE%D0%A2%D0%95%D0%A0",
+    "method": "GET",
+    "path": "/api/tickets?q=%D0%9A%D0%9E%D0%9C%D0%9F%D0%AC%D0%AE%D0%A2%D0%95%D0%A0",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X GET 'http://127.0.0.1:46147/api/tickets?q=%D0%9A%D0%9E%D0%9C%D0%9F%D0%AC%D0%AE%D0%A2%D0%95%D0%A0'",
+    "status": 200,
+    "headers": "HTTP/1.1 200 OK\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "[{\"id\":1,\"category_id\":1,\"title\":\"Не включается рабочий компьютер\",\"description\":\"После нажатия кнопки питания индикаторы не загораются.\",\"status\":\"new\",\"priority\":\"high\"}]"
+  },
+  {
+    "label": "GET /api/tickets?q=%D0%BD%D0%B5%D0%B8%D0%B7%D0%B2%D0%B5%D1%81%D1%82%D0%BD%D0%B0%D1%8F%20%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0",
+    "method": "GET",
+    "path": "/api/tickets?q=%D0%BD%D0%B5%D0%B8%D0%B7%D0%B2%D0%B5%D1%81%D1%82%D0%BD%D0%B0%D1%8F%20%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X GET 'http://127.0.0.1:46147/api/tickets?q=%D0%BD%D0%B5%D0%B8%D0%B7%D0%B2%D0%B5%D1%81%D1%82%D0%BD%D0%B0%D1%8F%20%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0'",
+    "status": 200,
+    "headers": "HTTP/1.1 200 OK\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "[]"
+  },
+  {
+    "label": "GET /api/tickets?q[]=x",
+    "method": "GET",
+    "path": "/api/tickets?q[]=x",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X GET 'http://127.0.0.1:46147/api/tickets?q[]=x'",
+    "status": 422,
+    "headers": "HTTP/1.1 422 Unknown Status Code\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Ошибка проверки фильтра\",\"errors\":{\"q\":\"Поиск должен быть строкой.\"}}"
+  },
+  {
+    "label": "Старый адрес /api/tasks",
+    "method": "GET",
+    "path": "/api/tasks",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X GET http://127.0.0.1:46147/api/tasks",
+    "status": 404,
+    "headers": "HTTP/1.1 404 Not Found\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Ресурс не найден\",\"errors\":{}}"
+  },
+  {
+    "label": "Старый адрес /api/projects",
+    "method": "GET",
+    "path": "/api/projects",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X GET http://127.0.0.1:46147/api/projects",
+    "status": 404,
+    "headers": "HTTP/1.1 404 Not Found\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Ресурс не найден\",\"errors\":{}}"
+  },
+  {
+    "label": "Старый адрес /api/users",
+    "method": "GET",
+    "path": "/api/users",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X GET http://127.0.0.1:46147/api/users",
+    "status": 404,
+    "headers": "HTTP/1.1 404 Not Found\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Ресурс не найден\",\"errors\":{}}"
+  },
+  {
+    "label": "Старый адрес /api/tasks/1",
+    "method": "GET",
+    "path": "/api/tasks/1",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X GET http://127.0.0.1:46147/api/tasks/1",
+    "status": 404,
+    "headers": "HTTP/1.1 404 Not Found\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Ресурс не найден\",\"errors\":{}}"
+  },
+  {
+    "label": "Старый адрес /api/projects/2/tasks",
+    "method": "GET",
+    "path": "/api/projects/2/tasks",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X GET http://127.0.0.1:46147/api/projects/2/tasks",
+    "status": 404,
+    "headers": "HTTP/1.1 404 Not Found\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Ресурс не найден\",\"errors\":{}}"
+  },
+  {
+    "label": "Ошибка чтения хранилища",
+    "method": "GET",
+    "path": "/api/tickets",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X GET http://127.0.0.1:46147/api/tickets",
+    "status": 500,
+    "headers": "HTTP/1.1 500 Internal Server Error\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "{\"error\":\"Внутренняя ошибка сервера\",\"errors\":{}}"
+  },
+  {
+    "label": "Работа после восстановления хранилища",
+    "method": "GET",
+    "path": "/api/tickets",
+    "request": null,
+    "raw": null,
+    "command": "curl --noproxy '*' --silent --show-error --max-time 10 -X GET http://127.0.0.1:46147/api/tickets",
+    "status": 200,
+    "headers": "HTTP/1.1 200 OK\nHost: 127.0.0.1:46147\nDate: Sun, 25 Oct 2026 11:32:53 GMT\nConnection: close\nX-Powered-By: PHP/8.4.24\nContent-Type: application/json; charset=utf-8\n\n",
+    "body": "[{\"id\":1,\"category_id\":1,\"title\":\"Не включается рабочий компьютер\",\"description\":\"После нажатия кнопки питания индикаторы не загораются.\",\"status\":\"new\",\"priority\":\"high\"},{\"id\":2,\"category_id\":2,\"title\":\"Ошибка запуска офисного приложения\",\"description\":\"При открытии документа появляется сообщение об ошибке лицензии.\",\"status\":\"in_progress\",\"priority\":\"medium\"},{\"id\":3,\"category_id\":3,\"title\":\"Восстановление доступа к почте\",\"description\":\"После смены пароля настроен вход в корпоративную почту.\",\"status\":\"done\",\"priority\":\"high\"},{\"id\":4,\"category_id\":1,\"title\":\"Принтер не печатает документы\",\"description\":\"Документы остаются в очереди печати на втором этаже.\",\"status\":\"in_progress\",\"priority\":\"medium\"},{\"id\":5,\"category_id\":3,\"title\":\"Нет подключения к сети\",\"description\":\"На рабочем месте пропало подключение к внутренним ресурсам.\",\"status\":\"new\",\"priority\":\"critical\"},{\"id\":6,\"category_id\":2,\"title\":\"Обновление антивируса\",\"description\":\"Установлены обновления и выполнена проверка компьютера.\",\"status\":\"done\",\"priority\":\"low\"}]"
+  }
+]

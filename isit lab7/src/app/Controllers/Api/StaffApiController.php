@@ -1,16 +1,16 @@
 <?php
 declare(strict_types=1);
 namespace App\Controllers\Api;
-use App\Models\UserRepository;
+use App\Models\StaffRepository;
 
 
-final class UserApiController
+final class StaffApiController
 {
-    private UserRepository $records;
+    private StaffRepository $records;
 
     public function __construct()
     {
-        $this->records = new UserRepository();
+        $this->records = new StaffRepository();
     }
 
     public function index(): void
@@ -37,7 +37,7 @@ final class UserApiController
         $data = array_replace(['role' => 'Инженер' ], $this->clean(json_input()));
         $this->validate($data);
         $created = $this->records->add($data);
-        header('Location: /api/users/' . $created['id']);
+        header('Location: /api/staff/' . $created['id']);
         json_response($created, 201);
     }
 

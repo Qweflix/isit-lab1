@@ -1,16 +1,16 @@
 <?php
 declare(strict_types=1);
 namespace App\Controllers\Api;
-use App\Models\ProjectRepository;
-use App\Models\TaskRepository;
+use App\Models\CategoryRepository;
+use App\Models\TicketRepository;
 
-final class ProjectApiController
+final class CategoryApiController
 {
-    private ProjectRepository $records;
+    private CategoryRepository $records;
 
     public function __construct()
     {
-        $this->records = new ProjectRepository();
+        $this->records = new CategoryRepository();
     }
 
     public function index(): void
@@ -37,7 +37,7 @@ final class ProjectApiController
         $data = array_replace(['description' => ''], $this->clean(json_input()));
         $this->validate($data);
         $created = $this->records->add($data);
-        header('Location: /api/projects/' . $created['id']);
+        header('Location: /api/categories/' . $created['id']);
         json_response($created, 201);
     }
 
@@ -56,18 +56,18 @@ final class ProjectApiController
     public function destroy(string $id): void
     {
         $record = $this->find($id);
-        if ((new TaskRepository())->byProject($record['id']) !== []) {
-            json_error('Нельзя удалить связанную запись: у неё есть обращения', 409);
+        if ((new TicketRepository())->byCategory($record['id']) !== []) {
+            json_error('Нельзя удалить категорию, пока в ней есть заявки', 409);
         }
         if (!$this->records->delete($record['id'])) {
             json_error('Запись не найдена', 404);
         }
         no_content();
     }
-    public function tasks(string $id): void
+    public function tickets(string $id): void
     {
         $record = $this->find($id);
-        json_response((new TaskRepository())->byProject($record['id']));
+        json_response((new TicketRepository())->byCategory($record['id']));
     }
 
     private function clean(array $input): array

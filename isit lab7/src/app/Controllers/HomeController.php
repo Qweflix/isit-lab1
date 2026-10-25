@@ -1,19 +1,19 @@
 <?php
 declare(strict_types=1);
 namespace App\Controllers;
-use App\Models\TaskRepository;
-use App\Models\ProjectRepository;
+use App\Models\TicketRepository;
+use App\Models\CategoryRepository;
 
 final class HomeController
 {
     public function index(): void
     {
-        $tasks = (new TaskRepository())->all();
+        $tickets = (new TicketRepository())->all();
         $counts = array_fill_keys(array_keys(config('statuses')), 0);
-        foreach ($tasks as $task) {
-            $counts[$task['status']]++;
+        foreach ($tickets as $ticket) {
+            $counts[$ticket['status']]++;
         }
         view('home', ['title' => 'Главная', 'counts' => $counts,
-            'total' => count($tasks), 'projectCount' => count((new ProjectRepository())->all())]);
+            'total' => count($tickets), 'categoryCount' => count((new CategoryRepository())->all())]);
     }
 }

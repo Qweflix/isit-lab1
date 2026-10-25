@@ -1,1 +1,1 @@
-</main><footer>Лабораторная работа №6 · PHP · MVC</footer></body></html>
+</main><footer>Лабораторная работа №7 · PHP · REST API</footer></body></html>

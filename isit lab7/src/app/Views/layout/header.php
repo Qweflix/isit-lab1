@@ -3,5 +3,5 @@
 <title><?= e($title ?? '') ?> — <?= e(config('name')) ?></title>
 <link rel="stylesheet" href="/css/style.css"></head><body>
 <header><strong><?= e(config('name')) ?></strong><nav aria-label="Основная навигация">
-<a href="/">Главная</a><a href="/tasks">Задачи</a><a href="/projects">Проекты</a>
-<a href="/tasks/create">Создать задачу</a></nav></header><main>
+<a href="/">Главная</a><a href="/tickets">Заявки</a><a href="/categories">Категории</a>
+<a href="/tickets/create">Создать заявку</a></nav></header><main>
