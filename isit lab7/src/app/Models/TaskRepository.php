@@ -2,29 +2,9 @@
 declare(strict_types=1);
 namespace App\Models;
 
-final class TaskRepository
+final class TaskRepository extends JsonRepository
 {
-    private JsonStorage $storage;
-
-    public function __construct()
-    {
-        $this->storage = new JsonStorage(STORAGE_PATH . '/tasks.json');
-    }
-
-    public function all(): array
-    {
-        return $this->storage->all();
-    }
-
-    public function find(int $id): ?array
-    {
-        foreach ($this->all() as $row) {
-            if ($row['id'] === $id) {
-                return $row;
-            }
-        }
-        return null;
-    }
+    protected string $name = 'tasks';
 
     public function byStatus(string $status): array
     {
@@ -35,10 +15,4 @@ final class TaskRepository
     {
         return array_values(array_filter($this->all(), fn (array $row): bool => $row['project_id'] === $id));
     }
-
-    public function add(array $row): array
-    {
-        return $this->storage->add($row);
-    }
-
 }

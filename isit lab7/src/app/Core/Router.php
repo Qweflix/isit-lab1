@@ -21,6 +21,21 @@ final class Router
         $this->add('POST', $path, $handler);
     }
 
+    public function put(string $path, array $handler): void
+    {
+        $this->add('PUT', $path, $handler);
+    }
+
+    public function patch(string $path, array $handler): void
+    {
+        $this->add('PATCH', $path, $handler);
+    }
+
+    public function delete(string $path, array $handler): void
+    {
+        $this->add('DELETE', $path, $handler);
+    }
+
     public function dispatch(string $method, string $uri): void
     {
         // Query-параметры не участвуют в выборе маршрута.
@@ -28,10 +43,8 @@ final class Router
         if (!is_string($path)) {
             notFound();
         }
+        $allowed = [];
         foreach ($this->routes as $route) {
-            if ($method !== $route['method']) {
-                continue;
-            }
             $names = [];
             $parts = explode('/', $route['path']);
             foreach ($parts as &$part) {
@@ -46,13 +59,21 @@ final class Router
             if (!preg_match('~^' . implode('/', $parts) . '$~D', $path, $matches)) {
                 continue;
             }
+            $allowed[] = $route['method'];
+            if ($method !== $route['method']) {
+                continue;
+            }
             array_shift($matches);
             $parameters = array_combine($names, array_map('rawurldecode', $matches));
             [$class, $action] = $route['handler'];
             (new $class())->$action(...$parameters);
             return;
         }
-        // Метод тоже является частью маршрута: неподдерживаемый POST даёт 404.
+        if (is_api_request() && $allowed !== []) {
+            header('Allow: ' . implode(', ', array_unique($allowed)));
+            json_error('Метод не разрешён', 405);
+        }
+        // Для HTML-страниц сохраняется поведение ЛР6 (404).
         notFound();
     }
 }
