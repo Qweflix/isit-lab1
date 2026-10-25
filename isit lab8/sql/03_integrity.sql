@@ -15,37 +15,37 @@ BEGIN
 END;
 $$;
 SELECT pg_temp.expect_error('FK отсутствующая связанная запись', '23503',
-    $q$INSERT INTO tasks(project_id, title ) VALUES (999999, 'Без связи')$q$);
+    $q$INSERT INTO tickets(category_id, title , description) VALUES (999999, 'Без связи', 'Описание проверки')$q$);
 SELECT pg_temp.expect_error('CHECK неизвестный статус', '23514',
-    $q$INSERT INTO tasks(project_id, title, status ) VALUES (1, 'Проверка статуса', 'unknown')$q$);
+    $q$INSERT INTO tickets(category_id, title, status , description) VALUES (1, 'Проверка статуса', 'unknown', 'Описание проверки')$q$);
 SELECT pg_temp.expect_error('NOT NULL название', '23502',
-    $q$INSERT INTO tasks(project_id, title ) VALUES (1, NULL)$q$);
+    $q$INSERT INTO tickets(category_id, title , description) VALUES (1, NULL, 'Описание проверки')$q$);
 SELECT pg_temp.expect_error('CHECK короткое название', '23514',
-    $q$INSERT INTO tasks(project_id, title ) VALUES (1, 'Да')$q$);
+    $q$INSERT INTO tickets(category_id, title , description) VALUES (1, 'Да', 'Описание проверки')$q$);
 SELECT pg_temp.expect_error('UNIQUE email', '23505',
-    $q$INSERT INTO users(name, email) SELECT 'Дубликат сотрудника', email FROM users WHERE id = 1$q$);
+    $q$INSERT INTO staff(name, email) SELECT 'Дубликат сотрудника', email FROM staff WHERE id = 1$q$);
 SELECT pg_temp.expect_error('1:1 повторный профиль', '23505',
-    $q$INSERT INTO user_profiles(user_id, phone) VALUES (1, 'duplicate')$q$);
+    $q$INSERT INTO staff_profiles(staff_id, phone) VALUES (1, 'duplicate')$q$);
 SELECT pg_temp.expect_error('N:M повторная пара', '23505',
-    $q$INSERT INTO task_tags(task_id, tag_id) VALUES (1, 1)$q$);
+    $q$INSERT INTO ticket_tags(ticket_id, tag_id) VALUES (1, 1)$q$);
 SELECT pg_temp.expect_error('UNIQUE имя тега', '23505',
     $q$INSERT INTO tags(name) SELECT name FROM tags WHERE id = 1$q$);
 SELECT pg_temp.expect_error('RESTRICT связанная запись с обращениями', '23503',
-    $q$DELETE FROM projects WHERE id = 1$q$);
+    $q$DELETE FROM categories WHERE id = 1$q$);
 SELECT pg_temp.expect_error('RESTRICT автор существующего комментария', '23503',
-    $q$DELETE FROM users WHERE id = 3$q$);
+    $q$DELETE FROM staff WHERE id = 3$q$);
 
 BEGIN;
 DO $$
 DECLARE new_id INTEGER;
 BEGIN
-    INSERT INTO tasks(project_id, title ) VALUES (1, 'Проверка каскадного удаления')
+    INSERT INTO tickets(category_id, title , description) VALUES (1, 'Проверка каскадного удаления', 'Описание проверки')
         RETURNING id INTO new_id;
-    INSERT INTO comments(task_id, author_id, body) VALUES (new_id, 1, 'Каскадный комментарий');
-    INSERT INTO task_tags(task_id, tag_id) VALUES (new_id, 1);
-    DELETE FROM tasks WHERE id = new_id;
-    IF EXISTS (SELECT 1 FROM comments WHERE task_id = new_id)
-       OR EXISTS (SELECT 1 FROM task_tags WHERE task_id = new_id) THEN
+    INSERT INTO comments(ticket_id, author_id, body) VALUES (new_id, 1, 'Каскадный комментарий');
+    INSERT INTO ticket_tags(ticket_id, tag_id) VALUES (new_id, 1);
+    DELETE FROM tickets WHERE id = new_id;
+    IF EXISTS (SELECT 1 FROM comments WHERE ticket_id = new_id)
+       OR EXISTS (SELECT 1 FROM ticket_tags WHERE ticket_id = new_id) THEN
         RAISE EXCEPTION 'FAIL CASCADE';
     END IF;
     RAISE NOTICE 'PASS CASCADE: комментарии и связи удалены вместе с основной записью';
@@ -57,14 +57,14 @@ BEGIN;
 DO $$
 DECLARE person_id INTEGER; record_id INTEGER;
 BEGIN
-    INSERT INTO users(name, email) VALUES ('Временный сотрудник', 'temporary@example.test')
+    INSERT INTO staff(name, email) VALUES ('Временный сотрудник', 'temporary@example.test')
         RETURNING id INTO person_id;
-    INSERT INTO user_profiles(user_id, phone) VALUES (person_id, 'test');
-    INSERT INTO tasks(project_id, assignee_id, title )
-        VALUES (1, person_id, 'Проверка SET NULL') RETURNING id INTO record_id;
-    DELETE FROM users WHERE id = person_id;
-    IF NOT EXISTS (SELECT 1 FROM tasks WHERE id = record_id AND assignee_id IS NULL)
-       OR EXISTS (SELECT 1 FROM user_profiles WHERE user_id = person_id) THEN
+    INSERT INTO staff_profiles(staff_id, phone) VALUES (person_id, 'test');
+    INSERT INTO tickets(category_id, assignee_id, title , description)
+        VALUES (1, person_id, 'Проверка SET NULL', 'Описание проверки') RETURNING id INTO record_id;
+    DELETE FROM staff WHERE id = person_id;
+    IF NOT EXISTS (SELECT 1 FROM tickets WHERE id = record_id AND assignee_id IS NULL)
+       OR EXISTS (SELECT 1 FROM staff_profiles WHERE staff_id = person_id) THEN
         RAISE EXCEPTION 'FAIL SET NULL или CASCADE профиля';
     END IF;
     RAISE NOTICE 'PASS SET NULL: основная запись сохранена без исполнителя; профиль удалён CASCADE';
@@ -76,8 +76,8 @@ BEGIN;
 DO $$
 BEGIN
     DELETE FROM tags WHERE id = 1;
-    IF EXISTS (SELECT 1 FROM task_tags WHERE tag_id = 1)
-       OR NOT EXISTS (SELECT 1 FROM tasks WHERE id = 1) THEN
+    IF EXISTS (SELECT 1 FROM ticket_tags WHERE tag_id = 1)
+       OR NOT EXISTS (SELECT 1 FROM tickets WHERE id = 1) THEN
         RAISE EXCEPTION 'FAIL CASCADE связи N:M';
     END IF;
     RAISE NOTICE 'PASS CASCADE: удаление тега удаляет только связи, основная запись сохранена';

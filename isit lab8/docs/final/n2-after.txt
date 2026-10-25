@@ -1,0 +1,7 @@
+                                                   QUERY PLAN                                                   
+----------------------------------------------------------------------------------------------------------------
+ Seq Scan on tickets  (cost=0.00..7512.00 rows=200000 width=40) (actual time=0.007..36.328 rows=200000 loops=1)
+   Filter: ((status)::text = ANY ('{new,in_progress,done}'::text[]))
+   Buffers: shared hit=4762
+ Planning Time: 0.040 ms
+ Execution Time: 43.400 ms

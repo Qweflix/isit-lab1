@@ -1,0 +1,73 @@
+CREATE FUNCTION
+psql:/workspace/isit-lab8/isit lab8/sql/03_integrity.sql:18: NOTICE:  PASS FK отсутствующая связанная запись: SQLSTATE 23503, insert or update on table "tickets" violates foreign key constraint "tickets_category_id_fkey"
+ expect_error 
+--------------
+ 
+(1 row)
+
+psql:/workspace/isit-lab8/isit lab8/sql/03_integrity.sql:20: NOTICE:  PASS CHECK неизвестный статус: SQLSTATE 23514, new row for relation "tickets" violates check constraint "tickets_status_check"
+ expect_error 
+--------------
+ 
+(1 row)
+
+psql:/workspace/isit-lab8/isit lab8/sql/03_integrity.sql:22: NOTICE:  PASS NOT NULL название: SQLSTATE 23502, null value in column "title" of relation "tickets" violates not-null constraint
+ expect_error 
+--------------
+ 
+(1 row)
+
+psql:/workspace/isit-lab8/isit lab8/sql/03_integrity.sql:24: NOTICE:  PASS CHECK короткое название: SQLSTATE 23514, new row for relation "tickets" violates check constraint "tickets_title_check"
+ expect_error 
+--------------
+ 
+(1 row)
+
+psql:/workspace/isit-lab8/isit lab8/sql/03_integrity.sql:26: NOTICE:  PASS UNIQUE email: SQLSTATE 23505, duplicate key value violates unique constraint "staff_email_key"
+ expect_error 
+--------------
+ 
+(1 row)
+
+psql:/workspace/isit-lab8/isit lab8/sql/03_integrity.sql:28: NOTICE:  PASS 1:1 повторный профиль: SQLSTATE 23505, duplicate key value violates unique constraint "staff_profiles_pkey"
+ expect_error 
+--------------
+ 
+(1 row)
+
+psql:/workspace/isit-lab8/isit lab8/sql/03_integrity.sql:30: NOTICE:  PASS N:M повторная пара: SQLSTATE 23505, duplicate key value violates unique constraint "ticket_tags_pkey"
+ expect_error 
+--------------
+ 
+(1 row)
+
+psql:/workspace/isit-lab8/isit lab8/sql/03_integrity.sql:32: NOTICE:  PASS UNIQUE имя тега: SQLSTATE 23505, duplicate key value violates unique constraint "tags_name_key"
+ expect_error 
+--------------
+ 
+(1 row)
+
+psql:/workspace/isit-lab8/isit lab8/sql/03_integrity.sql:34: NOTICE:  PASS RESTRICT связанная запись с обращениями: SQLSTATE 23503, update or delete on table "categories" violates foreign key constraint "tickets_category_id_fkey" on table "tickets"
+ expect_error 
+--------------
+ 
+(1 row)
+
+psql:/workspace/isit-lab8/isit lab8/sql/03_integrity.sql:36: NOTICE:  PASS RESTRICT автор существующего комментария: SQLSTATE 23503, update or delete on table "staff" violates foreign key constraint "categories_owner_id_fkey" on table "categories"
+ expect_error 
+--------------
+ 
+(1 row)
+
+BEGIN
+psql:/workspace/isit-lab8/isit lab8/sql/03_integrity.sql:53: NOTICE:  PASS CASCADE: комментарии и связи удалены вместе с основной записью
+DO
+ROLLBACK
+BEGIN
+psql:/workspace/isit-lab8/isit lab8/sql/03_integrity.sql:72: NOTICE:  PASS SET NULL: основная запись сохранена без исполнителя; профиль удалён CASCADE
+DO
+ROLLBACK
+BEGIN
+psql:/workspace/isit-lab8/isit lab8/sql/03_integrity.sql:85: NOTICE:  PASS CASCADE: удаление тега удаляет только связи, основная запись сохранена
+DO
+ROLLBACK
