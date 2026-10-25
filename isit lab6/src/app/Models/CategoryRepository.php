@@ -2,13 +2,13 @@
 declare(strict_types=1);
 namespace App\Models;
 
-final class ProjectRepository
+final class CategoryRepository
 {
     private JsonStorage $storage;
 
     public function __construct()
     {
-        $this->storage = new JsonStorage(STORAGE_PATH . '/projects.json');
+        $this->storage = new JsonStorage(STORAGE_PATH . '/categories.json');
     }
 
     public function all(): array

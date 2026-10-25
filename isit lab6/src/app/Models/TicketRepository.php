@@ -2,13 +2,13 @@
 declare(strict_types=1);
 namespace App\Models;
 
-final class TaskRepository
+final class TicketRepository
 {
     private JsonStorage $storage;
 
     public function __construct()
     {
-        $this->storage = new JsonStorage(STORAGE_PATH . '/tasks.json');
+        $this->storage = new JsonStorage(STORAGE_PATH . '/tickets.json');
     }
 
     public function all(): array
@@ -31,9 +31,9 @@ final class TaskRepository
         return array_values(array_filter($this->all(), fn (array $row): bool => $row['status'] === $status));
     }
 
-    public function byProject(int $id): array
+    public function byCategory(int $id): array
     {
-        return array_values(array_filter($this->all(), fn (array $row): bool => $row['project_id'] === $id));
+        return array_values(array_filter($this->all(), fn (array $row): bool => $row['category_id'] === $id));
     }
 
     public function add(array $row): array

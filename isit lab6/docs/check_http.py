@@ -81,7 +81,13 @@ with tempfile.TemporaryDirectory(prefix='lab6-http-') as tmp:
             storage = copied / 'storage' / (main + '.json')
             original = json.loads(storage.read_text())
             related_rows = json.loads((copied / 'storage' / (related + '.json')).read_text())
-            check('GET /', '/', 200, verify=contains('class="stats"'))
+            def home(headers, body):
+                assert body.count('<article>') == 4
+                numbers = [int(x) for x in re.findall(r'<b>([0-9]+)</b>', body)]
+                assert numbers == [sum(r['status'] == s for r in original) for s in ['new', 'in_progress', 'done']] + [len(related_rows)]
+                if not args.demo:
+                    assert 'Система учёта заявок пользователей' in body
+            check('GET /', '/', 200, verify=home)
             check('GET /' + main, '/' + main, 200, verify=contains(original[0]['title']))
             def filtered(headers, body):
                 statuses = re.findall(r'data-status="([^"]+)"', body)
