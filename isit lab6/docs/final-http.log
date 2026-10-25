@@ -1,0 +1,94 @@
+[Sun Oct 25 11:05:40 2026] PHP 8.4.24 Development Server (http://127.0.0.1:40227) started
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46468 Accepted
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46468 [200]: GET /
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46468 Closing
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46474 Accepted
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46474 [200]: GET /
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46474 Closing
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46478 Accepted
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46478 [200]: GET /tickets
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46478 Closing
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46482 Accepted
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46482 [200]: GET /tickets?status=done
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46482 Closing
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46496 Accepted
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46496 [200]: GET /tickets/3
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46496 Closing
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46506 Accepted
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46506 [404]: GET /tickets/999
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46506 Closing
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46510 Accepted
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46510 [200]: GET /tickets/create
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46510 Closing
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46522 Accepted
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46522 [422]: POST /tickets
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46522 Closing
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46526 Accepted
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46526 [422]: POST /tickets
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46526 Closing
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46536 Accepted
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46536 [302]: POST /tickets
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46536 Closing
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46540 Accepted
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46540 [200]: GET /tickets
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46540 Closing
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46546 Accepted
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46546 [200]: GET /categories
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46546 Closing
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46562 Accepted
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46562 [200]: GET /categories/2
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46562 Closing
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46578 Accepted
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46578 [404]: GET /nonexistent
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46578 Closing
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46582 Accepted
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46582 [404]: POST /categories
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46582 Closing
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46588 Accepted
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46588 [404]: GET /categories/999
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46588 Closing
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46596 Accepted
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46596 [404]: GET /tickets/abc
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46596 Closing
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46604 Accepted
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46604 [200]: GET /tickets?status=unknown
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46604 Closing
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46610 Accepted
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46610 [422]: POST /tickets
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46610 Closing
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46626 Accepted
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46626 [422]: POST /tickets
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46626 Closing
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46632 Accepted
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46632 [422]: POST /tickets
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46632 Closing
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46648 Accepted
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46648 [422]: POST /tickets
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46648 Closing
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46660 Accepted
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46660 [422]: POST /tickets
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46660 Closing
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46664 Accepted
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46664 [200]: GET /tickets/7
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46664 Closing
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46670 Accepted
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46670 [404]: GET /storage/tickets.json
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46670 Closing
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46678 Accepted
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46678 [404]: GET /tasks
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46678 Closing
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46690 Accepted
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46690 [404]: GET /tasks/create
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46690 Closing
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46698 Accepted
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46698 [404]: GET /tasks/3
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46698 Closing
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46714 Accepted
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46714 [404]: GET /projects
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46714 Closing
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46722 Accepted
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46722 [404]: GET /projects/2
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46722 Closing
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46734 Accepted
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46734 [404]: GET /members
+[Sun Oct 25 11:05:41 2026] 127.0.0.1:46734 Closing

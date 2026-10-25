@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Алексей Смирнов",
+    "role": "Team Lead / Backend",
+    "email": "alex@team.local"
+  },
+  {
+    "id": 2,
+    "name": "Мария Десяк",
+    "role": "UI/UX & Frontend",
+    "email": "maria@team.local"
+  },
+  {
+    "id": 3,
+    "name": "Дмитрий Кузнецов",
+    "role": "QA Engineer",
+    "email": "dmitry@team.local"
+  }
+]
