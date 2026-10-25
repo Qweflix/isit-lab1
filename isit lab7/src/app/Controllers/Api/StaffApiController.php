@@ -3,7 +3,6 @@ declare(strict_types=1);
 namespace App\Controllers\Api;
 use App\Models\StaffRepository;
 
-
 final class StaffApiController
 {
     private StaffRepository $records;
@@ -34,7 +33,7 @@ final class StaffApiController
 
     public function store(): void
     {
-        $data = array_replace(['role' => 'Инженер' ], $this->clean(json_input()));
+        $data = array_replace(['role' => 'Инженер'], $this->clean(json_input()));
         $this->validate($data);
         $created = $this->records->add($data);
         header('Location: /api/staff/' . $created['id']);
@@ -56,13 +55,13 @@ final class StaffApiController
     public function destroy(string $id): void
     {
         $record = $this->find($id);
-        
+
         if (!$this->records->delete($record['id'])) {
             json_error('Запись не найдена', 404);
         }
         no_content();
     }
-    
+
     private function clean(array $input): array
     {
         $data = array_intersect_key($input, array_flip(['name', 'email', 'role']));

@@ -1,0 +1,31 @@
+[Sun Oct 25 11:40:10 2026] PHP 8.4.24 Development Server (http://127.0.0.1:45841) started
+[Sun Oct 25 11:40:10 2026] 127.0.0.1:44084 Accepted
+[Sun Oct 25 11:40:10 2026] 127.0.0.1:44084 Closed without sending a request; it was probably just an unused speculative preconnection
+[Sun Oct 25 11:40:10 2026] 127.0.0.1:44084 Closing
+[Sun Oct 25 11:40:10 2026] 127.0.0.1:44092 Accepted
+[Sun Oct 25 11:40:10 2026] 127.0.0.1:44092 [200]: GET /
+[Sun Oct 25 11:40:10 2026] 127.0.0.1:44092 Closing
+[Sun Oct 25 11:40:10 2026] 127.0.0.1:44098 Accepted
+[Sun Oct 25 11:40:10 2026] 127.0.0.1:44098 [200]: GET /api/tickets
+[Sun Oct 25 11:40:10 2026] 127.0.0.1:44098 Closing
+[Sun Oct 25 11:40:10 2026] 127.0.0.1:44106 Accepted
+[Sun Oct 25 11:40:10 2026] 127.0.0.1:44106 [200]: GET /api/categories
+[Sun Oct 25 11:40:10 2026] 127.0.0.1:44106 Closing
+[Sun Oct 25 11:40:10 2026] 127.0.0.1:44110 Accepted
+[Sun Oct 25 11:40:10 2026] 127.0.0.1:44110 [200]: GET /api/staff
+[Sun Oct 25 11:40:10 2026] 127.0.0.1:44110 Closing
+[Sun Oct 25 11:40:10 2026] 127.0.0.1:44112 Accepted
+[Sun Oct 25 11:40:10 2026] 127.0.0.1:44112 [201]: POST /api/staff
+[Sun Oct 25 11:40:10 2026] 127.0.0.1:44112 Closing
+[Sun Oct 25 11:40:10 2026] 127.0.0.1:44116 Accepted
+[Sun Oct 25 11:40:10 2026] 127.0.0.1:44116 [200]: GET /api/staff/4
+[Sun Oct 25 11:40:10 2026] 127.0.0.1:44116 Closing
+[Sun Oct 25 11:40:10 2026] 127.0.0.1:44120 Accepted
+[Sun Oct 25 11:40:10 2026] 127.0.0.1:44120 [200]: PATCH /api/staff/4
+[Sun Oct 25 11:40:10 2026] 127.0.0.1:44120 Closing
+[Sun Oct 25 11:40:10 2026] 127.0.0.1:44134 Accepted
+[Sun Oct 25 11:40:10 2026] 127.0.0.1:44134 [204]: DELETE /api/staff/4
+[Sun Oct 25 11:40:10 2026] 127.0.0.1:44134 Closing
+[Sun Oct 25 11:40:10 2026] 127.0.0.1:44150 Accepted
+[Sun Oct 25 11:40:10 2026] 127.0.0.1:44150 [404]: GET /api/staff/4
+[Sun Oct 25 11:40:10 2026] 127.0.0.1:44150 Closing
