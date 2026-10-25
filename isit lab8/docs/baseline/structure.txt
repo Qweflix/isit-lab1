@@ -1,0 +1,59 @@
+             List of relations
+ Schema |     Name      | Type  |  Owner   
+--------+---------------+-------+----------
+ public | comments      | table | postgres
+ public | projects      | table | postgres
+ public | tags          | table | postgres
+ public | task_tags     | table | postgres
+ public | tasks         | table | postgres
+ public | user_profiles | table | postgres
+ public | users         | table | postgres
+(7 rows)
+
+                                       Table "public.tasks"
+   Column    |           Type           | Collation | Nullable |              Default              
+-------------+--------------------------+-----------+----------+-----------------------------------
+ id          | integer                  |           | not null | nextval('tasks_id_seq'::regclass)
+ project_id  | integer                  |           | not null | 
+ assignee_id | integer                  |           |          | 
+ title       | character varying(200)   |           | not null | 
+ status      | character varying(20)    |           | not null | 'new'::character varying
+ priority    | character varying(10)    |           | not null | 'medium'::character varying
+ due_date    | date                     |           |          | 
+ created_at  | timestamp with time zone |           | not null | CURRENT_TIMESTAMP
+Indexes:
+    "tasks_pkey" PRIMARY KEY, btree (id)
+Check constraints:
+    "tasks_priority_check" CHECK (priority::text = ANY (ARRAY['low'::character varying, 'medium'::character varying, 'high'::character varying]::text[]))
+    "tasks_status_check" CHECK (status::text = ANY (ARRAY['new'::character varying, 'in_progress'::character varying, 'done'::character varying]::text[]))
+    "tasks_title_check" CHECK (char_length(btrim(title::text)) >= 3)
+Foreign-key constraints:
+    "tasks_assignee_id_fkey" FOREIGN KEY (assignee_id) REFERENCES users(id) ON DELETE SET NULL
+    "tasks_project_id_fkey" FOREIGN KEY (project_id) REFERENCES projects(id) ON DELETE RESTRICT
+Referenced by:
+    TABLE "comments" CONSTRAINT "comments_task_id_fkey" FOREIGN KEY (task_id) REFERENCES tasks(id) ON DELETE CASCADE
+    TABLE "task_tags" CONSTRAINT "task_tags_task_id_fkey" FOREIGN KEY (task_id) REFERENCES tasks(id) ON DELETE CASCADE
+
+                   Table "public.user_profiles"
+  Column  |         Type          | Collation | Nullable | Default 
+----------+-----------------------+-----------+----------+---------
+ user_id  | integer               |           | not null | 
+ phone    | character varying(30) |           |          | 
+ telegram | character varying(50) |           |          | 
+Indexes:
+    "user_profiles_pkey" PRIMARY KEY, btree (user_id)
+    "user_profiles_telegram_key" UNIQUE CONSTRAINT, btree (telegram)
+Foreign-key constraints:
+    "user_profiles_user_id_fkey" FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+
+              Table "public.task_tags"
+ Column  |  Type   | Collation | Nullable | Default 
+---------+---------+-----------+----------+---------
+ task_id | integer |           | not null | 
+ tag_id  | integer |           | not null | 
+Indexes:
+    "task_tags_pkey" PRIMARY KEY, btree (task_id, tag_id)
+Foreign-key constraints:
+    "task_tags_tag_id_fkey" FOREIGN KEY (tag_id) REFERENCES tags(id) ON DELETE CASCADE
+    "task_tags_task_id_fkey" FOREIGN KEY (task_id) REFERENCES tasks(id) ON DELETE CASCADE
+

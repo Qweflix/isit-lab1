@@ -1,0 +1,16 @@
+BEGIN
+TRUNCATE TABLE
+INSERT 0 2000
+INSERT 0 3
+INSERT 0 2000
+INSERT 0 4
+INSERT 0 500000
+INSERT 0 1000000
+INSERT 0 100
+COMMIT
+ANALYZE
+ main_rows | comment_rows 
+-----------+--------------
+    500000 |      1000000
+(1 row)
+

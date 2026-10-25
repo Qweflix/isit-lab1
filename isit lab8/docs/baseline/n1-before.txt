@@ -1,0 +1,14 @@
+                                                     QUERY PLAN                                                      
+---------------------------------------------------------------------------------------------------------------------
+ Gather  (cost=1000.00..9938.17 rows=50 width=40) (actual time=14.351..54.344 rows=15 loops=1)
+   Workers Planned: 2
+   Workers Launched: 2
+   Buffers: shared hit=5659 read=670
+   ->  Parallel Seq Scan on tasks  (cost=0.00..8933.17 rows=21 width=40) (actual time=21.219..50.009 rows=5 loops=3)
+         Filter: ((title)::text ~~* '%12345%'::text)
+         Rows Removed by Filter: 166662
+         Buffers: shared hit=5659 read=670
+ Planning:
+   Buffers: shared hit=13
+ Planning Time: 0.099 ms
+ Execution Time: 54.371 ms
