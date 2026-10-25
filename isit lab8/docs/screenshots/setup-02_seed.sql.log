@@ -1,0 +1,39 @@
+BEGIN
+INSERT 0 3
+INSERT 0 3
+INSERT 0 3
+INSERT 0 6
+INSERT 0 4
+INSERT 0 5
+INSERT 0 5
+ setval 
+--------
+      3
+(1 row)
+
+ setval 
+--------
+      3
+(1 row)
+
+ setval 
+--------
+      6
+(1 row)
+
+ setval 
+--------
+      4
+(1 row)
+
+ setval 
+--------
+      5
+(1 row)
+
+COMMIT
+ initial_record_count 
+----------------------
+                    6
+(1 row)
+

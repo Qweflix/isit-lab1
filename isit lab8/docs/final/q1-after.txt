@@ -1,0 +1,13 @@
+                                                            QUERY PLAN                                                             
+-----------------------------------------------------------------------------------------------------------------------------------
+ Bitmap Heap Scan on tickets  (cost=5.06..356.12 rows=99 width=40) (actual time=0.032..0.160 rows=100 loops=1)
+   Recheck Cond: (category_id = 1500)
+   Heap Blocks: exact=100
+   Buffers: shared hit=100 read=2
+   ->  Bitmap Index Scan on idx_tickets_category_id  (cost=0.00..5.04 rows=99 width=0) (actual time=0.018..0.018 rows=100 loops=1)
+         Index Cond: (category_id = 1500)
+         Buffers: shared read=2
+ Planning:
+   Buffers: shared hit=11 read=1
+ Planning Time: 0.082 ms
+ Execution Time: 0.176 ms

@@ -1,0 +1,444 @@
+{
+  "columns": [
+    {
+      "table_name": "comments",
+      "column_name": "id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "nextval('comments_id_seq'::regclass)",
+      "ordinal_position": 1
+    },
+    {
+      "table_name": "comments",
+      "column_name": "task_id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null,
+      "ordinal_position": 2
+    },
+    {
+      "table_name": "comments",
+      "column_name": "author_id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null,
+      "ordinal_position": 3
+    },
+    {
+      "table_name": "comments",
+      "column_name": "body",
+      "data_type": "text",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null,
+      "ordinal_position": 4
+    },
+    {
+      "table_name": "comments",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "CURRENT_TIMESTAMP",
+      "ordinal_position": 5
+    },
+    {
+      "table_name": "projects",
+      "column_name": "id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "nextval('projects_id_seq'::regclass)",
+      "ordinal_position": 1
+    },
+    {
+      "table_name": "projects",
+      "column_name": "title",
+      "data_type": "character varying",
+      "character_maximum_length": 150,
+      "is_nullable": "NO",
+      "column_default": null,
+      "ordinal_position": 2
+    },
+    {
+      "table_name": "projects",
+      "column_name": "description",
+      "data_type": "text",
+      "character_maximum_length": null,
+      "is_nullable": "YES",
+      "column_default": null,
+      "ordinal_position": 3
+    },
+    {
+      "table_name": "projects",
+      "column_name": "owner_id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null,
+      "ordinal_position": 4
+    },
+    {
+      "table_name": "projects",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "CURRENT_TIMESTAMP",
+      "ordinal_position": 5
+    },
+    {
+      "table_name": "tags",
+      "column_name": "id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "nextval('tags_id_seq'::regclass)",
+      "ordinal_position": 1
+    },
+    {
+      "table_name": "tags",
+      "column_name": "name",
+      "data_type": "character varying",
+      "character_maximum_length": 50,
+      "is_nullable": "NO",
+      "column_default": null,
+      "ordinal_position": 2
+    },
+    {
+      "table_name": "task_tags",
+      "column_name": "task_id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null,
+      "ordinal_position": 1
+    },
+    {
+      "table_name": "task_tags",
+      "column_name": "tag_id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null,
+      "ordinal_position": 2
+    },
+    {
+      "table_name": "tasks",
+      "column_name": "id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "nextval('tasks_id_seq'::regclass)",
+      "ordinal_position": 1
+    },
+    {
+      "table_name": "tasks",
+      "column_name": "project_id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null,
+      "ordinal_position": 2
+    },
+    {
+      "table_name": "tasks",
+      "column_name": "assignee_id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "YES",
+      "column_default": null,
+      "ordinal_position": 3
+    },
+    {
+      "table_name": "tasks",
+      "column_name": "title",
+      "data_type": "character varying",
+      "character_maximum_length": 200,
+      "is_nullable": "NO",
+      "column_default": null,
+      "ordinal_position": 4
+    },
+    {
+      "table_name": "tasks",
+      "column_name": "status",
+      "data_type": "character varying",
+      "character_maximum_length": 20,
+      "is_nullable": "NO",
+      "column_default": "'new'::character varying",
+      "ordinal_position": 5
+    },
+    {
+      "table_name": "tasks",
+      "column_name": "priority",
+      "data_type": "character varying",
+      "character_maximum_length": 10,
+      "is_nullable": "NO",
+      "column_default": "'medium'::character varying",
+      "ordinal_position": 6
+    },
+    {
+      "table_name": "tasks",
+      "column_name": "due_date",
+      "data_type": "date",
+      "character_maximum_length": null,
+      "is_nullable": "YES",
+      "column_default": null,
+      "ordinal_position": 7
+    },
+    {
+      "table_name": "tasks",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "CURRENT_TIMESTAMP",
+      "ordinal_position": 8
+    },
+    {
+      "table_name": "user_profiles",
+      "column_name": "user_id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null,
+      "ordinal_position": 1
+    },
+    {
+      "table_name": "user_profiles",
+      "column_name": "phone",
+      "data_type": "character varying",
+      "character_maximum_length": 30,
+      "is_nullable": "YES",
+      "column_default": null,
+      "ordinal_position": 2
+    },
+    {
+      "table_name": "user_profiles",
+      "column_name": "telegram",
+      "data_type": "character varying",
+      "character_maximum_length": 50,
+      "is_nullable": "YES",
+      "column_default": null,
+      "ordinal_position": 3
+    },
+    {
+      "table_name": "users",
+      "column_name": "id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "nextval('users_id_seq'::regclass)",
+      "ordinal_position": 1
+    },
+    {
+      "table_name": "users",
+      "column_name": "name",
+      "data_type": "character varying",
+      "character_maximum_length": 100,
+      "is_nullable": "NO",
+      "column_default": null,
+      "ordinal_position": 2
+    },
+    {
+      "table_name": "users",
+      "column_name": "email",
+      "data_type": "character varying",
+      "character_maximum_length": 255,
+      "is_nullable": "NO",
+      "column_default": null,
+      "ordinal_position": 3
+    },
+    {
+      "table_name": "users",
+      "column_name": "role",
+      "data_type": "character varying",
+      "character_maximum_length": 20,
+      "is_nullable": "NO",
+      "column_default": "'developer'::character varying",
+      "ordinal_position": 4
+    },
+    {
+      "table_name": "users",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "CURRENT_TIMESTAMP",
+      "ordinal_position": 5
+    }
+  ],
+  "constraints": [
+    {
+      "table_name": "comments",
+      "constraint_name": "comments_author_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (author_id) REFERENCES users(id) ON DELETE RESTRICT"
+    },
+    {
+      "table_name": "comments",
+      "constraint_name": "comments_body_check",
+      "contype": "c",
+      "definition": "CHECK ((char_length(btrim(body)) > 0))"
+    },
+    {
+      "table_name": "comments",
+      "constraint_name": "comments_pkey",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "comments",
+      "constraint_name": "comments_task_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (task_id) REFERENCES tasks(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "projects",
+      "constraint_name": "projects_owner_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (owner_id) REFERENCES users(id) ON DELETE RESTRICT"
+    },
+    {
+      "table_name": "projects",
+      "constraint_name": "projects_pkey",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "projects",
+      "constraint_name": "projects_title_check",
+      "contype": "c",
+      "definition": "CHECK ((char_length(btrim((title)::text)) >= 3))"
+    },
+    {
+      "table_name": "projects",
+      "constraint_name": "projects_title_key",
+      "contype": "u",
+      "definition": "UNIQUE (title)"
+    },
+    {
+      "table_name": "tags",
+      "constraint_name": "tags_name_check",
+      "contype": "c",
+      "definition": "CHECK ((char_length(btrim((name)::text)) > 0))"
+    },
+    {
+      "table_name": "tags",
+      "constraint_name": "tags_name_key",
+      "contype": "u",
+      "definition": "UNIQUE (name)"
+    },
+    {
+      "table_name": "tags",
+      "constraint_name": "tags_pkey",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "task_tags",
+      "constraint_name": "task_tags_pkey",
+      "contype": "p",
+      "definition": "PRIMARY KEY (task_id, tag_id)"
+    },
+    {
+      "table_name": "task_tags",
+      "constraint_name": "task_tags_tag_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (tag_id) REFERENCES tags(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "task_tags",
+      "constraint_name": "task_tags_task_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (task_id) REFERENCES tasks(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "tasks",
+      "constraint_name": "tasks_assignee_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (assignee_id) REFERENCES users(id) ON DELETE SET NULL"
+    },
+    {
+      "table_name": "tasks",
+      "constraint_name": "tasks_pkey",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "tasks",
+      "constraint_name": "tasks_priority_check",
+      "contype": "c",
+      "definition": "CHECK (((priority)::text = ANY ((ARRAY['low'::character varying, 'medium'::character varying, 'high'::character varying])::text[])))"
+    },
+    {
+      "table_name": "tasks",
+      "constraint_name": "tasks_project_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (project_id) REFERENCES projects(id) ON DELETE RESTRICT"
+    },
+    {
+      "table_name": "tasks",
+      "constraint_name": "tasks_status_check",
+      "contype": "c",
+      "definition": "CHECK (((status)::text = ANY ((ARRAY['new'::character varying, 'in_progress'::character varying, 'done'::character varying])::text[])))"
+    },
+    {
+      "table_name": "tasks",
+      "constraint_name": "tasks_title_check",
+      "contype": "c",
+      "definition": "CHECK ((char_length(btrim((title)::text)) >= 3))"
+    },
+    {
+      "table_name": "user_profiles",
+      "constraint_name": "user_profiles_pkey",
+      "contype": "p",
+      "definition": "PRIMARY KEY (user_id)"
+    },
+    {
+      "table_name": "user_profiles",
+      "constraint_name": "user_profiles_telegram_key",
+      "contype": "u",
+      "definition": "UNIQUE (telegram)"
+    },
+    {
+      "table_name": "user_profiles",
+      "constraint_name": "user_profiles_user_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "users",
+      "constraint_name": "users_email_check",
+      "contype": "c",
+      "definition": "CHECK (((email)::text ~* '^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}$'::text))"
+    },
+    {
+      "table_name": "users",
+      "constraint_name": "users_email_key",
+      "contype": "u",
+      "definition": "UNIQUE (email)"
+    },
+    {
+      "table_name": "users",
+      "constraint_name": "users_name_check",
+      "contype": "c",
+      "definition": "CHECK ((char_length(btrim((name)::text)) >= 3))"
+    },
+    {
+      "table_name": "users",
+      "constraint_name": "users_pkey",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "users",
+      "constraint_name": "users_role_check",
+      "contype": "c",
+      "definition": "CHECK (((role)::text = ANY ((ARRAY['admin'::character varying, 'manager'::character varying, 'developer'::character varying])::text[])))"
+    }
+  ]
+}

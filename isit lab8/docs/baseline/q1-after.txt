@@ -1,0 +1,13 @@
+                                                           QUERY PLAN                                                            
+---------------------------------------------------------------------------------------------------------------------------------
+ Bitmap Heap Scan on tasks  (cost=6.35..844.85 rows=249 width=40) (actual time=0.091..0.388 rows=250 loops=1)
+   Recheck Cond: (project_id = 1500)
+   Heap Blocks: exact=250
+   Buffers: shared hit=235 read=18
+   ->  Bitmap Index Scan on idx_tasks_project_id  (cost=0.00..6.29 rows=249 width=0) (actual time=0.059..0.060 rows=250 loops=1)
+         Index Cond: (project_id = 1500)
+         Buffers: shared read=3
+ Planning:
+   Buffers: shared hit=15 read=1 written=1
+ Planning Time: 0.114 ms
+ Execution Time: 0.410 ms

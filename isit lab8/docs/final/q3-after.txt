@@ -1,0 +1,9 @@
+                                                              QUERY PLAN                                                              
+--------------------------------------------------------------------------------------------------------------------------------------
+ Index Scan using idx_comments_task_created on comments  (cost=0.42..11.92 rows=2 width=64) (actual time=0.024..0.027 rows=2 loops=1)
+   Index Cond: (ticket_id = 12345)
+   Buffers: shared hit=2 read=3
+ Planning:
+   Buffers: shared hit=14 read=1
+ Planning Time: 0.092 ms
+ Execution Time: 0.038 ms

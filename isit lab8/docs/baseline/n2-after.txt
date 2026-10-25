@@ -1,0 +1,7 @@
+                                                  QUERY PLAN                                                   
+---------------------------------------------------------------------------------------------------------------
+ Seq Scan on tasks  (cost=0.00..13204.00 rows=500000 width=40) (actual time=0.007..83.967 rows=500000 loops=1)
+   Filter: ((status)::text = ANY ('{new,in_progress,done}'::text[]))
+   Buffers: shared hit=5921 read=408
+ Planning Time: 0.048 ms
+ Execution Time: 102.039 ms

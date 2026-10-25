@@ -1,0 +1,459 @@
+{
+  "columns": [
+    {
+      "table_name": "categories",
+      "column_name": "id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "nextval('categories_id_seq'::regclass)",
+      "ordinal_position": 1
+    },
+    {
+      "table_name": "categories",
+      "column_name": "title",
+      "data_type": "character varying",
+      "character_maximum_length": 150,
+      "is_nullable": "NO",
+      "column_default": null,
+      "ordinal_position": 2
+    },
+    {
+      "table_name": "categories",
+      "column_name": "description",
+      "data_type": "text",
+      "character_maximum_length": null,
+      "is_nullable": "YES",
+      "column_default": null,
+      "ordinal_position": 3
+    },
+    {
+      "table_name": "categories",
+      "column_name": "owner_id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null,
+      "ordinal_position": 4
+    },
+    {
+      "table_name": "categories",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "CURRENT_TIMESTAMP",
+      "ordinal_position": 5
+    },
+    {
+      "table_name": "comments",
+      "column_name": "id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "nextval('comments_id_seq'::regclass)",
+      "ordinal_position": 1
+    },
+    {
+      "table_name": "comments",
+      "column_name": "ticket_id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null,
+      "ordinal_position": 2
+    },
+    {
+      "table_name": "comments",
+      "column_name": "author_id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null,
+      "ordinal_position": 3
+    },
+    {
+      "table_name": "comments",
+      "column_name": "body",
+      "data_type": "text",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null,
+      "ordinal_position": 4
+    },
+    {
+      "table_name": "comments",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "CURRENT_TIMESTAMP",
+      "ordinal_position": 5
+    },
+    {
+      "table_name": "staff",
+      "column_name": "id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "nextval('staff_id_seq'::regclass)",
+      "ordinal_position": 1
+    },
+    {
+      "table_name": "staff",
+      "column_name": "name",
+      "data_type": "character varying",
+      "character_maximum_length": 100,
+      "is_nullable": "NO",
+      "column_default": null,
+      "ordinal_position": 2
+    },
+    {
+      "table_name": "staff",
+      "column_name": "email",
+      "data_type": "character varying",
+      "character_maximum_length": 255,
+      "is_nullable": "NO",
+      "column_default": null,
+      "ordinal_position": 3
+    },
+    {
+      "table_name": "staff",
+      "column_name": "role",
+      "data_type": "character varying",
+      "character_maximum_length": 100,
+      "is_nullable": "NO",
+      "column_default": "'Инженер поддержки'::character varying",
+      "ordinal_position": 4
+    },
+    {
+      "table_name": "staff",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "CURRENT_TIMESTAMP",
+      "ordinal_position": 5
+    },
+    {
+      "table_name": "staff_profiles",
+      "column_name": "staff_id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null,
+      "ordinal_position": 1
+    },
+    {
+      "table_name": "staff_profiles",
+      "column_name": "phone",
+      "data_type": "character varying",
+      "character_maximum_length": 30,
+      "is_nullable": "YES",
+      "column_default": null,
+      "ordinal_position": 2
+    },
+    {
+      "table_name": "staff_profiles",
+      "column_name": "telegram",
+      "data_type": "character varying",
+      "character_maximum_length": 50,
+      "is_nullable": "YES",
+      "column_default": null,
+      "ordinal_position": 3
+    },
+    {
+      "table_name": "tags",
+      "column_name": "id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "nextval('tags_id_seq'::regclass)",
+      "ordinal_position": 1
+    },
+    {
+      "table_name": "tags",
+      "column_name": "name",
+      "data_type": "character varying",
+      "character_maximum_length": 50,
+      "is_nullable": "NO",
+      "column_default": null,
+      "ordinal_position": 2
+    },
+    {
+      "table_name": "ticket_tags",
+      "column_name": "ticket_id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null,
+      "ordinal_position": 1
+    },
+    {
+      "table_name": "ticket_tags",
+      "column_name": "tag_id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null,
+      "ordinal_position": 2
+    },
+    {
+      "table_name": "tickets",
+      "column_name": "id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "nextval('tickets_id_seq'::regclass)",
+      "ordinal_position": 1
+    },
+    {
+      "table_name": "tickets",
+      "column_name": "category_id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null,
+      "ordinal_position": 2
+    },
+    {
+      "table_name": "tickets",
+      "column_name": "assignee_id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "YES",
+      "column_default": null,
+      "ordinal_position": 3
+    },
+    {
+      "table_name": "tickets",
+      "column_name": "title",
+      "data_type": "character varying",
+      "character_maximum_length": 200,
+      "is_nullable": "NO",
+      "column_default": null,
+      "ordinal_position": 4
+    },
+    {
+      "table_name": "tickets",
+      "column_name": "description",
+      "data_type": "text",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null,
+      "ordinal_position": 5
+    },
+    {
+      "table_name": "tickets",
+      "column_name": "status",
+      "data_type": "character varying",
+      "character_maximum_length": 20,
+      "is_nullable": "NO",
+      "column_default": "'new'::character varying",
+      "ordinal_position": 6
+    },
+    {
+      "table_name": "tickets",
+      "column_name": "priority",
+      "data_type": "character varying",
+      "character_maximum_length": 10,
+      "is_nullable": "NO",
+      "column_default": "'medium'::character varying",
+      "ordinal_position": 7
+    },
+    {
+      "table_name": "tickets",
+      "column_name": "due_date",
+      "data_type": "date",
+      "character_maximum_length": null,
+      "is_nullable": "YES",
+      "column_default": null,
+      "ordinal_position": 8
+    },
+    {
+      "table_name": "tickets",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "CURRENT_TIMESTAMP",
+      "ordinal_position": 9
+    }
+  ],
+  "constraints": [
+    {
+      "table_name": "categories",
+      "constraint_name": "categories_owner_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (owner_id) REFERENCES staff(id) ON DELETE RESTRICT"
+    },
+    {
+      "table_name": "categories",
+      "constraint_name": "categories_pkey",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "categories",
+      "constraint_name": "categories_title_check",
+      "contype": "c",
+      "definition": "CHECK ((char_length(btrim((title)::text)) >= 3))"
+    },
+    {
+      "table_name": "categories",
+      "constraint_name": "categories_title_key",
+      "contype": "u",
+      "definition": "UNIQUE (title)"
+    },
+    {
+      "table_name": "comments",
+      "constraint_name": "comments_author_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (author_id) REFERENCES staff(id) ON DELETE RESTRICT"
+    },
+    {
+      "table_name": "comments",
+      "constraint_name": "comments_body_check",
+      "contype": "c",
+      "definition": "CHECK ((char_length(btrim(body)) > 0))"
+    },
+    {
+      "table_name": "comments",
+      "constraint_name": "comments_pkey",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "comments",
+      "constraint_name": "comments_ticket_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (ticket_id) REFERENCES tickets(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "staff",
+      "constraint_name": "staff_email_check",
+      "contype": "c",
+      "definition": "CHECK (((email)::text ~* '^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}$'::text))"
+    },
+    {
+      "table_name": "staff",
+      "constraint_name": "staff_email_key",
+      "contype": "u",
+      "definition": "UNIQUE (email)"
+    },
+    {
+      "table_name": "staff",
+      "constraint_name": "staff_name_check",
+      "contype": "c",
+      "definition": "CHECK ((char_length(btrim((name)::text)) >= 3))"
+    },
+    {
+      "table_name": "staff",
+      "constraint_name": "staff_pkey",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "staff",
+      "constraint_name": "staff_role_check",
+      "contype": "c",
+      "definition": "CHECK ((char_length(btrim((role)::text)) > 0))"
+    },
+    {
+      "table_name": "staff_profiles",
+      "constraint_name": "staff_profiles_pkey",
+      "contype": "p",
+      "definition": "PRIMARY KEY (staff_id)"
+    },
+    {
+      "table_name": "staff_profiles",
+      "constraint_name": "staff_profiles_staff_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (staff_id) REFERENCES staff(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "staff_profiles",
+      "constraint_name": "staff_profiles_telegram_key",
+      "contype": "u",
+      "definition": "UNIQUE (telegram)"
+    },
+    {
+      "table_name": "tags",
+      "constraint_name": "tags_name_check",
+      "contype": "c",
+      "definition": "CHECK ((char_length(btrim((name)::text)) > 0))"
+    },
+    {
+      "table_name": "tags",
+      "constraint_name": "tags_name_key",
+      "contype": "u",
+      "definition": "UNIQUE (name)"
+    },
+    {
+      "table_name": "tags",
+      "constraint_name": "tags_pkey",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "ticket_tags",
+      "constraint_name": "ticket_tags_pkey",
+      "contype": "p",
+      "definition": "PRIMARY KEY (ticket_id, tag_id)"
+    },
+    {
+      "table_name": "ticket_tags",
+      "constraint_name": "ticket_tags_tag_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (tag_id) REFERENCES tags(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "ticket_tags",
+      "constraint_name": "ticket_tags_ticket_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (ticket_id) REFERENCES tickets(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "tickets",
+      "constraint_name": "tickets_assignee_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (assignee_id) REFERENCES staff(id) ON DELETE SET NULL"
+    },
+    {
+      "table_name": "tickets",
+      "constraint_name": "tickets_category_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE RESTRICT"
+    },
+    {
+      "table_name": "tickets",
+      "constraint_name": "tickets_description_check",
+      "contype": "c",
+      "definition": "CHECK ((char_length(btrim(description)) > 0))"
+    },
+    {
+      "table_name": "tickets",
+      "constraint_name": "tickets_pkey",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "tickets",
+      "constraint_name": "tickets_priority_check",
+      "contype": "c",
+      "definition": "CHECK (((priority)::text = ANY ((ARRAY['low'::character varying, 'medium'::character varying, 'high'::character varying, 'critical'::character varying])::text[])))"
+    },
+    {
+      "table_name": "tickets",
+      "constraint_name": "tickets_status_check",
+      "contype": "c",
+      "definition": "CHECK (((status)::text = ANY ((ARRAY['new'::character varying, 'in_progress'::character varying, 'done'::character varying])::text[])))"
+    },
+    {
+      "table_name": "tickets",
+      "constraint_name": "tickets_title_check",
+      "contype": "c",
+      "definition": "CHECK ((char_length(btrim((title)::text)) >= 3))"
+    }
+  ]
+}
