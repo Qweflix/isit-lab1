@@ -1,0 +1,40 @@
+psql:/workspace/isit-lab8/isit lab8/docs/screenshots/06-index-status-due.sql:1: NOTICE:  index "idx_tickets_status_due" does not exist, skipping
+ДО ИНДЕКСА
+                                                               QUERY PLAN                                                               
+----------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=7543.52..7545.85 rows=20 width=44) (actual time=12.867..14.825 rows=20 loops=1)
+   Buffers: shared hit=4850
+   ->  Gather Merge  (cost=7543.52..14031.34 rows=55606 width=44) (actual time=12.866..14.821 rows=20 loops=1)
+         Workers Planned: 2
+         Workers Launched: 2
+         Buffers: shared hit=4850
+         ->  Sort  (cost=6543.49..6613.00 rows=27803 width=44) (actual time=10.669..10.670 rows=19 loops=3)
+               Sort Key: due_date, id
+               Sort Method: top-N heapsort  Memory: 26kB
+               Buffers: shared hit=4850
+               Worker 0:  Sort Method: top-N heapsort  Memory: 27kB
+               Worker 1:  Sort Method: top-N heapsort  Memory: 26kB
+               ->  Parallel Seq Scan on tickets  (cost=0.00..5803.67 rows=27803 width=44) (actual time=0.008..7.958 rows=22222 loops=3)
+                     Filter: ((status)::text = 'new'::text)
+                     Rows Removed by Filter: 44444
+                     Buffers: shared hit=4762
+ Planning:
+   Buffers: shared hit=35
+ Planning Time: 0.118 ms
+ Execution Time: 14.845 ms
+(20 rows)
+
+ПОСЛЕ ИНДЕКСА
+                                                                   QUERY PLAN                                                                   
+------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=0.42..6.57 rows=20 width=44) (actual time=0.028..0.059 rows=20 loops=1)
+   Buffers: shared hit=20 read=3
+   ->  Index Scan using idx_tickets_status_due on tickets  (cost=0.42..20219.00 rows=65773 width=44) (actual time=0.027..0.057 rows=20 loops=1)
+         Index Cond: ((status)::text = 'new'::text)
+         Buffers: shared hit=20 read=3
+ Planning:
+   Buffers: shared hit=14 read=1
+ Planning Time: 0.120 ms
+ Execution Time: 0.071 ms
+(9 rows)
+

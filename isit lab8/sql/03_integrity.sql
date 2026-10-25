@@ -1,12 +1,14 @@
 -- Каждая ошибка должна иметь ожидаемый SQLSTATE; неожиданная ошибка останавливает psql.
-CREATE OR REPLACE FUNCTION pg_temp.expect_error(label TEXT, expected_state TEXT, statement TEXT)
+CREATE OR REPLACE FUNCTION pg_temp.expect_error(label TEXT, expected_state TEXT, statement TEXT, expected_constraint TEXT DEFAULT NULL)
 RETURNS VOID LANGUAGE plpgsql AS $$
+DECLARE actual_constraint TEXT;
 BEGIN
     BEGIN
         EXECUTE statement;
     EXCEPTION WHEN OTHERS THEN
-        IF SQLSTATE = expected_state THEN
-            RAISE NOTICE 'PASS %: SQLSTATE %, %', label, SQLSTATE, SQLERRM;
+        GET STACKED DIAGNOSTICS actual_constraint = CONSTRAINT_NAME;
+        IF SQLSTATE = expected_state AND (expected_constraint IS NULL OR actual_constraint = expected_constraint) THEN
+            RAISE NOTICE 'PASS %: SQLSTATE %, ограничение %, %', label, SQLSTATE, actual_constraint, SQLERRM;
             RETURN;
         END IF;
         RAISE;
@@ -15,25 +17,33 @@ BEGIN
 END;
 $$;
 SELECT pg_temp.expect_error('FK отсутствующая связанная запись', '23503',
-    $q$INSERT INTO tickets(category_id, title , description) VALUES (999999, 'Без связи', 'Описание проверки')$q$);
+    $q$INSERT INTO tickets(category_id, title , description) VALUES (999999, 'Без связи', 'Описание проверки')$q$, 'tickets_category_id_fkey');
 SELECT pg_temp.expect_error('CHECK неизвестный статус', '23514',
-    $q$INSERT INTO tickets(category_id, title, status , description) VALUES (1, 'Проверка статуса', 'unknown', 'Описание проверки')$q$);
+    $q$INSERT INTO tickets(category_id, title, status , description) VALUES (1, 'Проверка статуса', 'unknown', 'Описание проверки')$q$, 'tickets_status_check');
 SELECT pg_temp.expect_error('NOT NULL название', '23502',
     $q$INSERT INTO tickets(category_id, title , description) VALUES (1, NULL, 'Описание проверки')$q$);
 SELECT pg_temp.expect_error('CHECK короткое название', '23514',
-    $q$INSERT INTO tickets(category_id, title , description) VALUES (1, 'Да', 'Описание проверки')$q$);
+    $q$INSERT INTO tickets(category_id, title , description) VALUES (1, 'Да', 'Описание проверки')$q$, 'tickets_title_check');
 SELECT pg_temp.expect_error('UNIQUE email', '23505',
-    $q$INSERT INTO staff(name, email) SELECT 'Дубликат сотрудника', email FROM staff WHERE id = 1$q$);
+    $q$INSERT INTO staff(name, email) SELECT 'Дубликат сотрудника', email FROM staff WHERE id = 1$q$, 'staff_email_key');
 SELECT pg_temp.expect_error('1:1 повторный профиль', '23505',
-    $q$INSERT INTO staff_profiles(staff_id, phone) VALUES (1, 'duplicate')$q$);
+    $q$INSERT INTO staff_profiles(staff_id, phone) VALUES (1, 'duplicate')$q$, 'staff_profiles_pkey');
 SELECT pg_temp.expect_error('N:M повторная пара', '23505',
-    $q$INSERT INTO ticket_tags(ticket_id, tag_id) VALUES (1, 1)$q$);
+    $q$INSERT INTO ticket_tags(ticket_id, tag_id) VALUES (1, 1)$q$, 'ticket_tags_pkey');
 SELECT pg_temp.expect_error('UNIQUE имя тега', '23505',
-    $q$INSERT INTO tags(name) SELECT name FROM tags WHERE id = 1$q$);
+    $q$INSERT INTO tags(name) SELECT name FROM tags WHERE id = 1$q$, 'tags_name_key');
 SELECT pg_temp.expect_error('RESTRICT связанная запись с обращениями', '23503',
-    $q$DELETE FROM categories WHERE id = 1$q$);
+    $q$DELETE FROM categories WHERE id = 1$q$, 'tickets_category_id_fkey');
 SELECT pg_temp.expect_error('RESTRICT автор существующего комментария', '23503',
-    $q$DELETE FROM staff WHERE id = 3$q$);
+    $q$DO $test$
+    DECLARE person_id INTEGER;
+    BEGIN
+        INSERT INTO staff(name, email) VALUES ('Автор для проверки', 'author-check@example.test')
+            RETURNING id INTO person_id;
+        INSERT INTO comments(ticket_id, author_id, body) VALUES (1, person_id, 'Проверка запрета удаления автора');
+        DELETE FROM staff WHERE id = person_id;
+    END;
+    $test$;$q$, 'comments_author_id_fkey');
 
 BEGIN;
 DO $$
