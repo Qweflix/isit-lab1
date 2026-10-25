@@ -1,42 +1,42 @@
 [
   {
     "id": 1,
-    "member_id": 1,
     "title": "Спроектировать схему маршрутизации MVC",
     "status": "done",
     "priority": "high",
-    "due_date": "2026-10-20"
+    "due_date": "2026-10-20",
+    "project_id": 1
   },
   {
     "id": 2,
-    "member_id": 2,
     "title": "Сверстать макет списка задач и профиля участника",
     "status": "in_progress",
     "priority": "high",
-    "due_date": "2026-10-26"
+    "due_date": "2026-10-26",
+    "project_id": 2
   },
   {
     "id": 3,
-    "member_id": 3,
     "title": "Провести нагрузочное тестирование роутера",
     "status": "new",
     "priority": "medium",
-    "due_date": "2026-10-28"
+    "due_date": "2026-10-28",
+    "project_id": 3
   },
   {
     "id": 4,
-    "member_id": 2,
     "title": "Добавить стили для отображения статусов и приоритетов",
     "status": "done",
     "priority": "low",
-    "due_date": "2026-10-22"
+    "due_date": "2026-10-22",
+    "project_id": 2
   },
   {
     "id": 5,
-    "member_id": 1,
     "title": "Реализовать сохранение сущностей в JSON-хранилище",
     "status": "in_progress",
     "priority": "high",
-    "due_date": "2026-10-27"
+    "due_date": "2026-10-27",
+    "project_id": 1
   }
 ]
