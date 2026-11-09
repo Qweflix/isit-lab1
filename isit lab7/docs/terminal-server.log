@@ -1,0 +1,31 @@
+[Sun Oct 25 11:34:45 2026] PHP 8.4.24 Development Server (http://127.0.0.1:40241) started
+[Sun Oct 25 11:34:45 2026] 127.0.0.1:33654 Accepted
+[Sun Oct 25 11:34:45 2026] 127.0.0.1:33654 Closed without sending a request; it was probably just an unused speculative preconnection
+[Sun Oct 25 11:34:45 2026] 127.0.0.1:33654 Closing
+[Sun Oct 25 11:34:46 2026] 127.0.0.1:33666 Accepted
+[Sun Oct 25 11:34:46 2026] 127.0.0.1:33666 [200]: GET /api/tickets/3
+[Sun Oct 25 11:34:46 2026] 127.0.0.1:33666 Closing
+[Sun Oct 25 11:34:46 2026] 127.0.0.1:33676 Accepted
+[Sun Oct 25 11:34:46 2026] 127.0.0.1:33676 [201]: POST /api/tickets
+[Sun Oct 25 11:34:46 2026] 127.0.0.1:33676 Closing
+[Sun Oct 25 11:34:46 2026] 127.0.0.1:33688 Accepted
+[Sun Oct 25 11:34:46 2026] 127.0.0.1:33688 [200]: PATCH /api/tickets/7
+[Sun Oct 25 11:34:46 2026] 127.0.0.1:33688 Closing
+[Sun Oct 25 11:34:47 2026] 127.0.0.1:33690 Accepted
+[Sun Oct 25 11:34:47 2026] 127.0.0.1:33690 [204]: DELETE /api/tickets/7
+[Sun Oct 25 11:34:47 2026] 127.0.0.1:33690 Closing
+[Sun Oct 25 11:34:47 2026] 127.0.0.1:33704 Accepted
+[Sun Oct 25 11:34:47 2026] 127.0.0.1:33704 [400]: POST /api/tickets
+[Sun Oct 25 11:34:47 2026] 127.0.0.1:33704 Closing
+[Sun Oct 25 11:34:47 2026] 127.0.0.1:33708 Accepted
+[Sun Oct 25 11:34:47 2026] 127.0.0.1:33708 [404]: GET /api/tickets/99999
+[Sun Oct 25 11:34:47 2026] 127.0.0.1:33708 Closing
+[Sun Oct 25 11:34:47 2026] 127.0.0.1:33712 Accepted
+[Sun Oct 25 11:34:47 2026] 127.0.0.1:33712 [405]: DELETE /api/categories
+[Sun Oct 25 11:34:47 2026] 127.0.0.1:33712 Closing
+[Sun Oct 25 11:34:48 2026] 127.0.0.1:33716 Accepted
+[Sun Oct 25 11:34:48 2026] 127.0.0.1:33716 [422]: POST /api/tickets
+[Sun Oct 25 11:34:48 2026] 127.0.0.1:33716 Closing
+[Sun Oct 25 11:34:48 2026] 127.0.0.1:33718 Accepted
+[Sun Oct 25 11:34:48 2026] 127.0.0.1:33718 [409]: DELETE /api/categories/1
+[Sun Oct 25 11:34:48 2026] 127.0.0.1:33718 Closing

@@ -1,0 +1,258 @@
+[Sun Oct 25 11:32:18 2026] PHP 8.4.24 Development Server (http://127.0.0.1:55573) started
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60620 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60620 Closed without sending a request; it was probably just an unused speculative preconnection
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60620 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60626 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60626 [200]: GET /api/tasks
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60626 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60630 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60630 [200]: GET /api/tasks/1
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60630 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60646 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60646 [201]: POST /api/tasks
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60646 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60658 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60658 [200]: GET /api/tasks/6
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60658 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60670 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60670 [200]: PATCH /api/tasks/6
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60670 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60674 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60674 [200]: PUT /api/tasks/6
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60674 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60680 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60680 [204]: DELETE /api/tasks/6
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60680 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60684 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60684 [404]: GET /api/tasks/6
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60684 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60690 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60690 [404]: DELETE /api/tasks/6
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60690 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60694 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60694 [422]: POST /api/tasks
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60694 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60704 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60704 [400]: POST /api/tasks
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60704 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60710 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60710 [404]: GET /api/tasks/99999
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60710 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60712 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60712 [405]: DELETE /api/tasks
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60712 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60722 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60722 [405]: POST /api/tasks/1
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60722 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60730 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60730 [404]: PATCH /api/tasks/99999
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60730 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60744 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60744 [200]: GET /api/projects
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60744 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60754 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60754 [200]: GET /api/projects/1
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60754 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60770 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60770 [201]: POST /api/projects
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60770 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60772 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60772 [200]: GET /api/projects/4
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60772 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60782 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60782 [200]: PATCH /api/projects/4
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60782 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60796 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60796 [200]: PUT /api/projects/4
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60796 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60808 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60808 [204]: DELETE /api/projects/4
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60808 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60816 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60816 [404]: GET /api/projects/4
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60816 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60826 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60826 [404]: DELETE /api/projects/4
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60826 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60832 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60832 [422]: POST /api/projects
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60832 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60836 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60836 [400]: POST /api/projects
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60836 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60850 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60850 [404]: GET /api/projects/99999
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60850 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60862 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60862 [405]: DELETE /api/projects
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60862 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60876 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60876 [405]: POST /api/projects/1
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60876 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60892 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60892 [404]: PATCH /api/projects/99999
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60892 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60898 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60898 [200]: GET /api/users
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60898 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60914 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60914 [200]: GET /api/users/1
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60914 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60922 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60922 [201]: POST /api/users
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60922 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60936 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60936 [200]: GET /api/users/4
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60936 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60940 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60940 [200]: PATCH /api/users/4
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60940 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60952 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60952 [200]: PUT /api/users/4
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60952 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60968 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60968 [204]: DELETE /api/users/4
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60968 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60984 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60984 [404]: GET /api/users/4
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60984 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60992 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60992 [404]: DELETE /api/users/4
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60992 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60996 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60996 [422]: POST /api/users
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:60996 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32772 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32772 [400]: POST /api/users
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32772 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32784 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32784 [404]: GET /api/users/99999
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32784 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32786 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32786 [405]: DELETE /api/users
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32786 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32788 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32788 [405]: POST /api/users/1
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32788 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32792 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32792 [404]: PATCH /api/users/99999
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32792 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32794 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32794 [200]: GET /api/tasks?status=done
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32794 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32804 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32804 [200]: GET /api/tasks?project_id=2
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32804 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32816 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32816 [200]: GET /api/tasks?status=done&project_id=2
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32816 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32828 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32828 [200]: GET /api/tasks?project_id=99999
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32828 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32840 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32840 [200]: GET /api/projects/2/tasks
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32840 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32842 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32842 [404]: GET /api/projects/99999/tasks
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32842 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32844 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32844 [409]: DELETE /api/projects/1
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32844 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32852 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32852 [422]: POST /api/tasks
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32852 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32854 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32854 [422]: POST /api/tasks
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32854 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32858 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32858 [422]: POST /api/tasks
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32858 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32864 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32864 [422]: POST /api/tasks
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32864 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32880 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32880 [422]: POST /api/tasks
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32880 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32896 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32896 [422]: POST /api/tasks
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32896 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32902 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32902 [422]: POST /api/tasks
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32902 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32912 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32912 [422]: POST /api/users
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32912 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32914 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32914 [422]: PATCH /api/projects/1
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32914 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32916 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32916 [400]: POST /api/tasks
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32916 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32930 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32930 [400]: POST /api/tasks
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32930 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32944 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32944 [400]: POST /api/tasks
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32944 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32952 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32952 [400]: POST /api/tasks
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32952 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32966 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32966 [400]: POST /api/tasks
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32966 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32976 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32976 [400]: POST /api/tasks
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32976 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32984 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32984 [404]: GET /api/missing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32984 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32990 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32990 [404]: GET /api
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32990 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32994 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32994 [404]: GET /api/tasks/abc
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32994 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32998 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32998 [404]: GET /api/tasks/99999999999999999999999999999
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:32998 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:33000 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:33000 [422]: GET /api/tasks?status=unknown
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:33000 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:33002 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:33002 [422]: GET /api/tasks?project_id=abc
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:33002 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:33010 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:33010 [422]: GET /api/tasks?status[]=done
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:33010 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:33018 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:33018 [200]: GET /
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:33018 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:33034 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:33034 [200]: GET /tasks
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:33034 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:33040 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:33040 [200]: GET /projects
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:33040 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:33056 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:33056 [200]: GET /tasks/create
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:33056 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:33072 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:33072 [404]: GET /nonexistent
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:33072 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:33084 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:33084 [404]: GET /storage/tasks.json
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:33084 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:33086 Accepted
+[Sun Oct 25 11:32:18 2026] JsonException: Syntax error in /tmp/lab7-api-y_v_jneo/src/app/Models/JsonRepository.php:19
+Stack trace:
+#0 /tmp/lab7-api-y_v_jneo/src/app/Models/JsonRepository.php(19): json_decode('invalid JSON', true, 512, 4194304)
+#1 /tmp/lab7-api-y_v_jneo/src/app/Models/JsonRepository.php(40): App\Models\JsonRepository->access(false, Object(Closure))
+#2 /tmp/lab7-api-y_v_jneo/src/app/Controllers/Api/TaskApiController.php(20): App\Models\JsonRepository->all()
+#3 /tmp/lab7-api-y_v_jneo/src/app/Core/Router.php(69): App\Controllers\Api\TaskApiController->index()
+#4 /tmp/lab7-api-y_v_jneo/src/public/index.php(12): App\Core\Router->dispatch('GET', '/api/tasks')
+#5 {main}
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:33086 [500]: GET /api/tasks
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:33086 Closing
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:33090 Accepted
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:33090 [200]: GET /api/tasks
+[Sun Oct 25 11:32:18 2026] 127.0.0.1:33090 Closing

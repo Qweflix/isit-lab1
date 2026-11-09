@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "category_id": 1,
+    "title": "Не включается рабочий компьютер",
+    "description": "После нажатия кнопки питания индикаторы не загораются.",
+    "status": "new",
+    "priority": "high"
+  },
+  {
+    "id": 2,
+    "category_id": 2,
+    "title": "Ошибка запуска офисного приложения",
+    "description": "При открытии документа появляется сообщение об ошибке лицензии.",
+    "status": "in_progress",
+    "priority": "medium"
+  },
+  {
+    "id": 3,
+    "category_id": 3,
+    "title": "Восстановление доступа к почте",
+    "description": "После смены пароля настроен вход в корпоративную почту.",
+    "status": "done",
+    "priority": "high"
+  },
+  {
+    "id": 4,
+    "category_id": 1,
+    "title": "Принтер не печатает документы",
+    "description": "Документы остаются в очереди печати на втором этаже.",
+    "status": "in_progress",
+    "priority": "medium"
+  },
+  {
+    "id": 5,
+    "category_id": 3,
+    "title": "Нет подключения к сети",
+    "description": "На рабочем месте пропало подключение к внутренним ресурсам.",
+    "status": "new",
+    "priority": "critical"
+  },
+  {
+    "id": 6,
+    "category_id": 2,
+    "title": "Обновление антивируса",
+    "description": "Установлены обновления и выполнена проверка компьютера.",
+    "status": "done",
+    "priority": "low"
+  }
+]
