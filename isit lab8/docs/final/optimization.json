@@ -1,0 +1,62 @@
+[
+  {
+    "label": "Q1",
+    "query": "Фильтр по категории",
+    "index": "idx_tickets_category_id",
+    "before_ms": 9.592,
+    "before_plan": "Parallel Seq Scan",
+    "after_ms": 0.176,
+    "after_plan": "Bitmap Heap Scan → Bitmap Index Scan",
+    "speedup": 54.50000000000001
+  },
+  {
+    "label": "Q2",
+    "query": "Исполнитель и статус",
+    "index": "idx_tickets_assignee_status",
+    "before_ms": 12.493,
+    "before_plan": "Parallel Seq Scan",
+    "after_ms": 0.077,
+    "after_plan": "Bitmap Heap Scan → Bitmap Index Scan",
+    "speedup": 162.24675324675326
+  },
+  {
+    "label": "Q3",
+    "query": "Комментарии записи по времени",
+    "index": "idx_comments_ticket_created",
+    "before_ms": 13.325,
+    "before_plan": "Sort → Parallel Seq Scan",
+    "after_ms": 0.038,
+    "after_plan": "Index Scan",
+    "speedup": 350.6578947368421
+  },
+  {
+    "label": "Q4",
+    "query": "Статус и ближайшие сроки",
+    "index": "idx_tickets_status_due",
+    "before_ms": 17.015,
+    "before_plan": "Gather Merge → Sort → Parallel Seq Scan",
+    "after_ms": 0.053,
+    "after_plan": "Index Scan",
+    "speedup": 321.0377358490566
+  },
+  {
+    "label": "N1",
+    "query": "Подстрока ILIKE",
+    "index": "B-tree не поддерживает ведущий %",
+    "before_ms": 25.631,
+    "before_plan": "Parallel Seq Scan",
+    "after_ms": 25.918,
+    "after_plan": "Parallel Seq Scan",
+    "speedup": 0.988926614707925
+  },
+  {
+    "label": "N2",
+    "query": "Выборка всех статусов",
+    "index": "Читается вся таблица",
+    "before_ms": 42.361,
+    "before_plan": "Seq Scan",
+    "after_ms": 43.4,
+    "after_plan": "Seq Scan",
+    "speedup": 0.9760599078341013
+  }
+]

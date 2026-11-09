@@ -1,0 +1,12 @@
+BEGIN
+psql:/workspace/isit-lab8/isit lab8/sql/01_schema.sql:3: NOTICE:  view "supervisor_report" does not exist, skipping
+DROP VIEW
+DROP TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+COMMIT

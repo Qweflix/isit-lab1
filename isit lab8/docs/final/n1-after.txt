@@ -1,0 +1,12 @@
+                                                      QUERY PLAN                                                      
+----------------------------------------------------------------------------------------------------------------------
+ Gather  (cost=1000.00..6805.67 rows=20 width=40) (actual time=3.714..25.909 rows=12 loops=1)
+   Workers Planned: 2
+   Workers Launched: 2
+   Buffers: shared hit=4762
+   ->  Parallel Seq Scan on tickets  (cost=0.00..5803.67 rows=8 width=40) (actual time=11.273..21.270 rows=4 loops=3)
+         Filter: ((title)::text ~~* '%12345%'::text)
+         Rows Removed by Filter: 66663
+         Buffers: shared hit=4762
+ Planning Time: 0.078 ms
+ Execution Time: 25.918 ms

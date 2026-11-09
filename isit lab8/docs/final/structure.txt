@@ -1,0 +1,61 @@
+             List of relations
+ Schema |      Name      | Type  |  Owner   
+--------+----------------+-------+----------
+ public | categories     | table | postgres
+ public | comments       | table | postgres
+ public | staff          | table | postgres
+ public | staff_profiles | table | postgres
+ public | tags           | table | postgres
+ public | ticket_tags    | table | postgres
+ public | tickets        | table | postgres
+(7 rows)
+
+                                       Table "public.tickets"
+   Column    |           Type           | Collation | Nullable |               Default               
+-------------+--------------------------+-----------+----------+-------------------------------------
+ id          | integer                  |           | not null | nextval('tickets_id_seq'::regclass)
+ category_id | integer                  |           | not null | 
+ assignee_id | integer                  |           |          | 
+ title       | character varying(200)   |           | not null | 
+ description | text                     |           | not null | 
+ status      | character varying(20)    |           | not null | 'new'::character varying
+ priority    | character varying(10)    |           | not null | 'medium'::character varying
+ due_date    | date                     |           |          | 
+ created_at  | timestamp with time zone |           | not null | CURRENT_TIMESTAMP
+Indexes:
+    "tickets_pkey" PRIMARY KEY, btree (id)
+Check constraints:
+    "tickets_description_check" CHECK (char_length(btrim(description)) > 0)
+    "tickets_priority_check" CHECK (priority::text = ANY (ARRAY['low'::character varying, 'medium'::character varying, 'high'::character varying, 'critical'::character varying]::text[]))
+    "tickets_status_check" CHECK (status::text = ANY (ARRAY['new'::character varying, 'in_progress'::character varying, 'done'::character varying]::text[]))
+    "tickets_title_check" CHECK (char_length(btrim(title::text)) >= 3)
+Foreign-key constraints:
+    "tickets_assignee_id_fkey" FOREIGN KEY (assignee_id) REFERENCES staff(id) ON DELETE SET NULL
+    "tickets_category_id_fkey" FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE RESTRICT
+Referenced by:
+    TABLE "comments" CONSTRAINT "comments_ticket_id_fkey" FOREIGN KEY (ticket_id) REFERENCES tickets(id) ON DELETE CASCADE
+    TABLE "ticket_tags" CONSTRAINT "ticket_tags_ticket_id_fkey" FOREIGN KEY (ticket_id) REFERENCES tickets(id) ON DELETE CASCADE
+
+                   Table "public.staff_profiles"
+  Column  |         Type          | Collation | Nullable | Default 
+----------+-----------------------+-----------+----------+---------
+ staff_id | integer               |           | not null | 
+ phone    | character varying(30) |           |          | 
+ telegram | character varying(50) |           |          | 
+Indexes:
+    "staff_profiles_pkey" PRIMARY KEY, btree (staff_id)
+    "staff_profiles_telegram_key" UNIQUE CONSTRAINT, btree (telegram)
+Foreign-key constraints:
+    "staff_profiles_staff_id_fkey" FOREIGN KEY (staff_id) REFERENCES staff(id) ON DELETE CASCADE
+
+              Table "public.ticket_tags"
+  Column   |  Type   | Collation | Nullable | Default 
+-----------+---------+-----------+----------+---------
+ ticket_id | integer |           | not null | 
+ tag_id    | integer |           | not null | 
+Indexes:
+    "ticket_tags_pkey" PRIMARY KEY, btree (ticket_id, tag_id)
+Foreign-key constraints:
+    "ticket_tags_tag_id_fkey" FOREIGN KEY (tag_id) REFERENCES tags(id) ON DELETE CASCADE
+    "ticket_tags_ticket_id_fkey" FOREIGN KEY (ticket_id) REFERENCES tickets(id) ON DELETE CASCADE
+

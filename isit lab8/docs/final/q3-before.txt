@@ -1,0 +1,18 @@
+                                                        QUERY PLAN                                                         
+---------------------------------------------------------------------------------------------------------------------------
+ Sort  (cost=8318.54..8318.55 rows=2 width=64) (actual time=11.501..13.316 rows=2 loops=1)
+   Sort Key: created_at
+   Sort Method: quicksort  Memory: 25kB
+   Buffers: shared hit=5235
+   ->  Gather  (cost=1000.00..8318.53 rows=2 width=64) (actual time=0.856..13.311 rows=2 loops=1)
+         Workers Planned: 2
+         Workers Launched: 2
+         Buffers: shared hit=5235
+         ->  Parallel Seq Scan on comments  (cost=0.00..7318.33 rows=1 width=64) (actual time=3.708..8.639 rows=1 loops=3)
+               Filter: (ticket_id = 12345)
+               Rows Removed by Filter: 133333
+               Buffers: shared hit=5235
+ Planning:
+   Buffers: shared hit=21
+ Planning Time: 0.053 ms
+ Execution Time: 13.325 ms

@@ -1,0 +1,81 @@
+@startuml
+!theme plain
+hide circle
+skinparam linetype polyline
+skinparam ranksep 95
+skinparam nodesep 65
+skinparam shadowing false
+skinparam defaultFontName SansSerif
+skinparam defaultFontSize 13
+left to right direction
+
+title Система учёта заявок пользователей — PostgreSQL
+
+entity "staff\nСотрудники поддержки" as staff {
+  * id : SERIAL <<PK>>
+  --
+  * name : VARCHAR(100) <<CHECK>>
+  * email : VARCHAR(255) <<UNIQUE, CHECK>>
+  * role : VARCHAR(100) <<CHECK, DEFAULT>>
+  * created_at : TIMESTAMPTZ <<DEFAULT>>
+}
+entity "staff_profiles\nПрофили сотрудников" as staff_profiles {
+  * staff_id : INTEGER <<PK, FK>>
+  --
+  phone : VARCHAR(30)
+  telegram : VARCHAR(50) <<UNIQUE>>
+}
+entity "categories\nКатегории обращений" as categories {
+  * id : SERIAL <<PK>>
+  --
+  * title : VARCHAR(150) <<UNIQUE, CHECK>>
+  description : TEXT
+  * owner_id : INTEGER <<FK>>
+  * created_at : TIMESTAMPTZ <<DEFAULT>>
+}
+entity "tickets\nЗаявки пользователей" as tickets {
+  * id : SERIAL <<PK>>
+  --
+  * category_id : INTEGER <<FK>>
+  assignee_id : INTEGER <<FK>>
+  * title : VARCHAR(200) <<CHECK>>
+  * description : TEXT <<CHECK>>
+  * status : VARCHAR(20) <<CHECK, DEFAULT>>
+  * priority : VARCHAR(10) <<CHECK, DEFAULT>>
+  due_date : DATE
+  * created_at : TIMESTAMPTZ <<DEFAULT>>
+}
+entity "comments\nКомментарии" as comments {
+  * id : SERIAL <<PK>>
+  --
+  * ticket_id : INTEGER <<FK>>
+  * author_id : INTEGER <<FK>>
+  * body : TEXT <<CHECK>>
+  * created_at : TIMESTAMPTZ <<DEFAULT>>
+}
+entity "tags\nТеги" as tags {
+  * id : SERIAL <<PK>>
+  --
+  * name : VARCHAR(50) <<UNIQUE, CHECK>>
+}
+entity "ticket_tags\nТеги заявок" as ticket_tags {
+  * ticket_id : INTEGER <<PK, FK>>
+  * tag_id : INTEGER <<PK, FK>>
+}
+
+staff ||--o| staff_profiles : "1:1 / CASCADE"
+staff ||--o{ categories : "владелец / RESTRICT"
+categories ||--o{ tickets : "1:N / RESTRICT"
+staff |o--o{ tickets : "исполнитель / SET NULL"
+staff ||--o{ comments : "автор / RESTRICT"
+tickets ||--o{ comments : "1:N / CASCADE"
+tickets ||--o{ ticket_tags : "CASCADE"
+tags ||--o{ ticket_tags : "CASCADE"
+
+legend bottom
+  * — NOT NULL; PK — первичный ключ; FK — внешний ключ
+  tickets ↔ tags — связь N:M через ticket_tags
+  status: new / in_progress / done
+  priority: low / medium / high / critical
+endlegend
+@enduml

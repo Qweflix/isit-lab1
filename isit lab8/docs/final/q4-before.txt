@@ -1,0 +1,22 @@
+                                                               QUERY PLAN                                                               
+----------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=7541.58..7543.91 rows=20 width=44) (actual time=15.161..17.003 rows=20 loops=1)
+   Buffers: shared hit=4860
+   ->  Gather Merge  (cost=7541.58..14012.36 rows=55460 width=44) (actual time=15.160..17.000 rows=20 loops=1)
+         Workers Planned: 2
+         Workers Launched: 2
+         Buffers: shared hit=4860
+         ->  Sort  (cost=6541.55..6610.88 rows=27730 width=44) (actual time=12.334..12.335 rows=20 loops=3)
+               Sort Key: due_date, id
+               Sort Method: top-N heapsort  Memory: 26kB
+               Buffers: shared hit=4860
+               Worker 0:  Sort Method: top-N heapsort  Memory: 27kB
+               Worker 1:  Sort Method: top-N heapsort  Memory: 26kB
+               ->  Parallel Seq Scan on tickets  (cost=0.00..5803.67 rows=27730 width=44) (actual time=0.010..9.800 rows=22222 loops=3)
+                     Filter: ((status)::text = 'new'::text)
+                     Rows Removed by Filter: 44444
+                     Buffers: shared hit=4762
+ Planning:
+   Buffers: shared hit=21
+ Planning Time: 0.067 ms
+ Execution Time: 17.015 ms

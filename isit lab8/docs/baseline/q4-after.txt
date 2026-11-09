@@ -1,0 +1,11 @@
+                                                                 QUERY PLAN                                                                  
+---------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=0.42..3.97 rows=20 width=44) (actual time=0.027..0.075 rows=20 loops=1)
+   Buffers: shared hit=2 read=21
+   ->  Index Scan using idx_tasks_status_due on tasks  (cost=0.42..29619.12 rows=166750 width=44) (actual time=0.026..0.072 rows=20 loops=1)
+         Index Cond: ((status)::text = 'new'::text)
+         Buffers: shared hit=2 read=21
+ Planning:
+   Buffers: shared hit=17 read=1
+ Planning Time: 0.128 ms
+ Execution Time: 0.086 ms

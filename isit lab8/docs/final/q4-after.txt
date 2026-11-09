@@ -1,0 +1,11 @@
+                                                                   QUERY PLAN                                                                   
+------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=0.42..6.46 rows=20 width=44) (actual time=0.025..0.042 rows=20 loops=1)
+   Buffers: shared hit=20 read=3
+   ->  Index Scan using idx_tickets_status_due on tickets  (cost=0.42..20274.82 rows=67100 width=44) (actual time=0.024..0.040 rows=20 loops=1)
+         Index Cond: ((status)::text = 'new'::text)
+         Buffers: shared hit=20 read=3
+ Planning:
+   Buffers: shared hit=17 read=1
+ Planning Time: 0.110 ms
+ Execution Time: 0.053 ms
