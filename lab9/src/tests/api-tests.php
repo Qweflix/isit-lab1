@@ -59,7 +59,7 @@ expect('Защита категории с заявками','DELETE','/api/cate
 expect('Защита сотрудника с зависимостями','DELETE','/api/staff/1',409,null,$manager);
 expect('Оператор не создаёт справочник','POST','/api/categories',403,['title'=>'Категория','owner_id'=>1],$operator);
 expect('Оператор не меняет сотрудников','PATCH','/api/staff/1',403,['name'=>'Новый сотрудник'],$operator);
-expect('Пустая заявка','POST','/api/tickets',422,[],$manager);
+expect('Пустая заявка','POST','/api/tickets',422,(object)[],$manager);
 $data=['title'=>'Проверка API','description'=>'Учебная проверка','category_id'=>1,'due_date'=>null];
 foreach([['category_id'=>'1'],['due_date'=>''],['due_date'=>'2026-02-30'],['assignee_id'=>99999],['priority'=>'bad']] as $invalid)expect('Неверное поле '.key($invalid),'POST','/api/tickets',422,array_replace($data,$invalid),$manager);
 $r=expect('Создание оператором','POST','/api/tickets',201,$data,$operator);$id=$r['data']['id'];

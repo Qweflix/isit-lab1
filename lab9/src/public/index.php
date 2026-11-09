@@ -19,6 +19,9 @@ try {
     $router = new \App\Core\Router();
     require BASE_PATH . '/routes/web.php';
     $router->dispatch($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);
+} catch (\App\Core\DatabaseUnavailable $error) {
+    error_log('Database connection unavailable');
+    json_error('База данных недоступна',503);
 } catch (PDOException $error) {
     error_log('Database error SQLSTATE=' . $error->getCode());
     $state = (string)$error->getCode();
