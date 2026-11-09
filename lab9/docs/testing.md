@@ -7,7 +7,7 @@
 - API: **87 проверок, 0 ошибок** — [протокол](api-tests.txt), [код](../src/tests/api-tests.php).
 - Хранение паролей и токенов: **3 проверки, 0 ошибок** — [протокол](storage-tests.txt), [код](../src/tests/storage-tests.php).
 - Браузер: **24 сценария, 0 ошибок** — [фактические результаты](browser-results.json), [код](../src/tests/browser-tests.py).
-- PHP: проверка синтаксиса всех файлов проекта через `php84 -l`.
+- PHP: проверка синтаксиса всех 19 файлов проекта через `php84 -l`.
 
 API-тест содержит больше требуемых 57 проверок. Дополнительные проверки домашней доработки: совместные фильтры категории и статуса, обратная сортировка, неверный календарный день, неизменяемость ID, повторное использование отозванного токена. В собственном коде нет исходного шаблона с TODO; те же проверки перенесены на существующие ресурсы ЛР7.
 
@@ -72,9 +72,9 @@ API-тест содержит больше требуемых 57 проверо�
 Сначала выполнить инструкцию README и сохранить DEMO_PASSWORD в окружении текущего терминала. Из `lab9/src`:
 
 ```bash
-docker compose exec -T -e DEMO_PASSWORD web php84 tests/api-tests.php
-docker compose exec -T -e DEMO_PASSWORD web php84 tests/storage-tests.php
-docker compose exec -T web sh -c 'find app bin config public routes tests -name "*.php" -exec php84 -l {} \;'
+docker compose -p lab9 exec -T -e DEMO_PASSWORD web php84 tests/api-tests.php
+docker compose -p lab9 exec -T -e DEMO_PASSWORD web php84 tests/storage-tests.php
+docker compose -p lab9 exec -T web sh -c 'find app bin config public routes tests -name "*.php" -exec php84 -l {} \;'
 ```
 
 Для браузера нужны Python 3 и Playwright (это инструменты тестирования, приложению не требуются):

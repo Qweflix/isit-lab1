@@ -162,7 +162,7 @@ docker compose -p lab9 up -d --no-build --wait
 
 Без Docker нужны PHP 8.2+ с pdo_pgsql и mbstring и отдельная PostgreSQL 16+. Задать DB_HOST, DB_PORT, DB_NAME, DB_USER, DB_PASSWORD и DEMO_PASSWORD в окружении; выполнить `php bin/reset-db.php --confirm`, затем `php -S 127.0.0.1:8000 -t public public/index.php`. Проверенный вариант этой работы — Docker.
 
-[Фактическая проверка чистого клона](docs/clean-clone.md). [Матрица соответствия PDF](docs/requirements.md).
+[Фактическая проверка чистого клона](docs/clean-clone.md). [Матрица соответствия PDF](docs/requirements.md). [Ответы на контрольные вопросы](docs/defense.md).
 
 ## 10. Вывод
 
