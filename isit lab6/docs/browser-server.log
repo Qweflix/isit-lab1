@@ -1,0 +1,82 @@
+[Sun Oct 25 11:04:37 2026] PHP 8.4.24 Development Server (http://127.0.0.1:39287) started
+[Sun Oct 25 11:04:37 2026] 127.0.0.1:37070 Accepted
+[Sun Oct 25 11:04:37 2026] 127.0.0.1:37070 [200]: GET /
+[Sun Oct 25 11:04:37 2026] 127.0.0.1:37070 Closing
+[Sun Oct 25 11:04:38 2026] 127.0.0.1:37080 Accepted
+[Sun Oct 25 11:04:38 2026] 127.0.0.1:37080 [200]: GET /
+[Sun Oct 25 11:04:38 2026] 127.0.0.1:37080 Closing
+[Sun Oct 25 11:04:38 2026] 127.0.0.1:37096 Accepted
+[Sun Oct 25 11:04:38 2026] 127.0.0.1:37096 [200]: GET /css/style.css
+[Sun Oct 25 11:04:38 2026] 127.0.0.1:37096 Closing
+[Sun Oct 25 11:04:38 2026] 127.0.0.1:37108 Accepted
+[Sun Oct 25 11:04:38 2026] 127.0.0.1:37108 [404]: GET /favicon.ico
+[Sun Oct 25 11:04:38 2026] 127.0.0.1:37108 Closing
+[Sun Oct 25 11:04:38 2026] 127.0.0.1:37110 Accepted
+[Sun Oct 25 11:04:38 2026] 127.0.0.1:37110 [200]: GET /tickets
+[Sun Oct 25 11:04:38 2026] 127.0.0.1:37110 Closing
+[Sun Oct 25 11:04:38 2026] 127.0.0.1:37112 Accepted
+[Sun Oct 25 11:04:38 2026] 127.0.0.1:37112 [200]: GET /css/style.css
+[Sun Oct 25 11:04:38 2026] 127.0.0.1:37112 Closing
+[Sun Oct 25 11:04:39 2026] 127.0.0.1:37118 Accepted
+[Sun Oct 25 11:04:39 2026] 127.0.0.1:37118 [200]: GET /tickets/3
+[Sun Oct 25 11:04:39 2026] 127.0.0.1:37118 Closing
+[Sun Oct 25 11:04:39 2026] 127.0.0.1:37130 Accepted
+[Sun Oct 25 11:04:39 2026] 127.0.0.1:37130 [200]: GET /css/style.css
+[Sun Oct 25 11:04:39 2026] 127.0.0.1:37130 Closing
+[Sun Oct 25 11:04:39 2026] 127.0.0.1:37144 Accepted
+[Sun Oct 25 11:04:39 2026] 127.0.0.1:37144 [200]: GET /categories/2
+[Sun Oct 25 11:04:39 2026] 127.0.0.1:37144 Closing
+[Sun Oct 25 11:04:39 2026] 127.0.0.1:37146 Accepted
+[Sun Oct 25 11:04:39 2026] 127.0.0.1:37146 [200]: GET /css/style.css
+[Sun Oct 25 11:04:39 2026] 127.0.0.1:37146 Closing
+[Sun Oct 25 11:04:40 2026] 127.0.0.1:37156 Accepted
+[Sun Oct 25 11:04:40 2026] 127.0.0.1:37156 [200]: GET /tickets/create
+[Sun Oct 25 11:04:40 2026] 127.0.0.1:37156 Closing
+[Sun Oct 25 11:04:40 2026] 127.0.0.1:37166 Accepted
+[Sun Oct 25 11:04:40 2026] 127.0.0.1:37166 [200]: GET /css/style.css
+[Sun Oct 25 11:04:40 2026] 127.0.0.1:37166 Closing
+[Sun Oct 25 11:04:41 2026] 127.0.0.1:37180 Accepted
+[Sun Oct 25 11:04:41 2026] 127.0.0.1:37180 [404]: GET /nonexistent
+[Sun Oct 25 11:04:41 2026] 127.0.0.1:37180 Closing
+[Sun Oct 25 11:04:41 2026] 127.0.0.1:37190 Accepted
+[Sun Oct 25 11:04:41 2026] 127.0.0.1:37190 [200]: GET /css/style.css
+[Sun Oct 25 11:04:41 2026] 127.0.0.1:37190 Closing
+[Sun Oct 25 11:04:41 2026] 127.0.0.1:37206 Accepted
+[Sun Oct 25 11:04:41 2026] 127.0.0.1:37206 [200]: GET /tickets/create
+[Sun Oct 25 11:04:41 2026] 127.0.0.1:37206 Closing
+[Sun Oct 25 11:04:41 2026] 127.0.0.1:37212 Accepted
+[Sun Oct 25 11:04:41 2026] 127.0.0.1:37212 [200]: GET /css/style.css
+[Sun Oct 25 11:04:41 2026] 127.0.0.1:37212 Closing
+[Sun Oct 25 11:04:41 2026] 127.0.0.1:37216 Accepted
+[Sun Oct 25 11:04:41 2026] 127.0.0.1:37216 [422]: POST /tickets
+[Sun Oct 25 11:04:41 2026] 127.0.0.1:37216 Closing
+[Sun Oct 25 11:04:41 2026] 127.0.0.1:37228 Accepted
+[Sun Oct 25 11:04:41 2026] 127.0.0.1:37228 [200]: GET /css/style.css
+[Sun Oct 25 11:04:41 2026] 127.0.0.1:37228 Closing
+[Sun Oct 25 11:04:42 2026] 127.0.0.1:37234 Accepted
+[Sun Oct 25 11:04:42 2026] 127.0.0.1:37234 [302]: POST /tickets
+[Sun Oct 25 11:04:42 2026] 127.0.0.1:37234 Closing
+[Sun Oct 25 11:04:42 2026] 127.0.0.1:37240 Accepted
+[Sun Oct 25 11:04:42 2026] 127.0.0.1:37240 [200]: GET /tickets
+[Sun Oct 25 11:04:42 2026] 127.0.0.1:37240 Closing
+[Sun Oct 25 11:04:42 2026] 127.0.0.1:37254 Accepted
+[Sun Oct 25 11:04:42 2026] 127.0.0.1:37254 [200]: GET /css/style.css
+[Sun Oct 25 11:04:42 2026] 127.0.0.1:37254 Closing
+[Sun Oct 25 11:04:42 2026] 127.0.0.1:37264 Accepted
+[Sun Oct 25 11:04:42 2026] 127.0.0.1:37264 [200]: GET /tickets
+[Sun Oct 25 11:04:42 2026] 127.0.0.1:37264 Closing
+[Sun Oct 25 11:04:42 2026] 127.0.0.1:37280 Accepted
+[Sun Oct 25 11:04:42 2026] 127.0.0.1:37280 [404]: GET /nonexistent
+[Sun Oct 25 11:04:42 2026] 127.0.0.1:37280 Closing
+[Sun Oct 25 11:04:42 2026] 127.0.0.1:37290 Accepted
+[Sun Oct 25 11:04:42 2026] 127.0.0.1:37290 [422]: POST /tickets
+[Sun Oct 25 11:04:42 2026] 127.0.0.1:37290 Closing
+[Sun Oct 25 11:04:42 2026] 127.0.0.1:37302 Accepted
+[Sun Oct 25 11:04:42 2026] 127.0.0.1:37302 [302]: POST /tickets
+[Sun Oct 25 11:04:42 2026] 127.0.0.1:37302 Closing
+[Sun Oct 25 11:04:42 2026] 127.0.0.1:37314 Accepted
+[Sun Oct 25 11:04:42 2026] 127.0.0.1:37314 [200]: GET /tickets
+[Sun Oct 25 11:04:42 2026] 127.0.0.1:37314 Closing
+[Sun Oct 25 11:04:42 2026] 127.0.0.1:37330 Accepted
+[Sun Oct 25 11:04:42 2026] 127.0.0.1:37330 [200]: GET /http-headers.txt
+[Sun Oct 25 11:04:42 2026] 127.0.0.1:37330 Closing
