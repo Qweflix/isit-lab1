@@ -1,4 +1,4 @@
-"""Real Chromium scenarios. Needs playwright, DEMO_PASSWORD and running lab9 Compose.
+"""Real Chromium scenarios. Needs playwright, DEMO_PASSWORD and running lab10 Compose.
 Run only against a disposable lab database after api-tests.php.
 """
 import os, json, hashlib, subprocess, time
