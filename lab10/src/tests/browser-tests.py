@@ -6,9 +6,10 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright, expect
 
 LAB = Path(__file__).resolve().parents[2]
-IMAGES = LAB / 'images'
-COMPOSE = ['docker','compose','-p',os.getenv('COMPOSE_PROJECT_NAME','lab9'),'-f',str(LAB/'src/docker-compose.yml')]
-BASE = os.getenv('APP_URL','http://127.0.0.1:8000')
+IMAGES = Path(os.getenv('BROWSER_IMAGES', '/tmp/lab10-browser-images'))
+IMAGES.mkdir(parents=True, exist_ok=True)
+COMPOSE = ['docker','compose','-p',os.getenv('COMPOSE_PROJECT_NAME','lab10'),'-f',str(LAB/'src/docker-compose.yml')]
+BASE = os.getenv('APP_URL','http://127.0.0.1:8020')
 PASSWORD = os.environ['DEMO_PASSWORD']
 results=[]
 def checked(name,expected,actual):
