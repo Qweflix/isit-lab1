@@ -1,0 +1,22 @@
+digraph cache {
+  graph [rankdir=TB, bgcolor="white", pad=0.3, nodesep=0.4, ranksep=0.5];
+  node [shape=box, style="rounded,filled", fillcolor="#edf2f7", fontname="DejaVu Sans", fontsize=13, margin=0.15];
+  edge [fontname="DejaVu Sans", fontsize=11];
+  request [label="Клиент ЛР9\nGET /api/tickets" fillcolor="#bee3f8"];
+  auth [label="PHP: проверить Bearer-токен в PostgreSQL\nПроверка прав до обращения к кешу"];
+  key [label="Нормализовать параметры\nКлюч = префикс + вид + версия + хеш параметров"];
+  redis [shape=diamond,label="Redis доступен?" fillcolor="#fefcbf"];
+  hit [shape=diamond,label="Ключ найден?" fillcolor="#fefcbf"];
+  db [label="PgRepository\nПодготовленный SQL → PostgreSQL"];
+  save [label="Записать JSON в Redis\nTTL + случайные 0–15%"];
+  response [label="200 JSON\nX-Cache: HIT / MISS / BYPASS" fillcolor="#c6f6d5"];
+  write [label="POST / PATCH / DELETE\nУспешная запись в PostgreSQL" fillcolor="#bee3f8"];
+  invalidate [label="INCR версии заявок / категорий\nНовые запросы используют новые ключи\nСтарые копии исчезают по TTL"];
+  request -> auth -> key -> redis;
+  auth -> response [label="401/403: отказ до кеша",style=dashed];
+  redis -> hit [label="Да"]; redis -> db [label="Нет / debug off: BYPASS"];
+  hit -> response [label="Да: HIT"];hit -> db [label="Нет: MISS"];
+  db -> save [label="Redis доступен"];db -> response [label="BYPASS"];
+  save -> response [label="MISS"];
+  write -> invalidate;invalidate -> key [style=dashed,label="Следующий запрос"];
+}

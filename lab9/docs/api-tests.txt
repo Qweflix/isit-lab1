@@ -1,0 +1,88 @@
+PASS Вход руководителя
+PASS Открытый токен: 64 hex
+PASS Срок токена около 2 часов
+PASS В ответе входа нет password_hash
+PASS Вход оператора
+PASS Без токена /api/tickets
+PASS Без токена /api/categories
+PASS Без токена /api/staff
+PASS Без токена /api/auth/me
+PASS Без токена /api/unknown
+PASS Поддельный токен
+PASS Неверный пароль
+PASS Неизвестная почта
+PASS Одинаковая ошибка почты и пароля
+PASS SQL-инъекция при входе
+PASS Некорректный JSON
+PASS Массив вместо объекта
+PASS Неверные типы входа
+PASS Пользователь /me
+PASS Нет пароля и хеша в /me
+PASS Список tickets
+PASS Нет хеша в tickets
+PASS Одна запись tickets
+PASS Несуществующая запись tickets
+PASS Запрет удаления tickets
+PASS Список categories
+PASS Нет хеша в categories
+PASS Одна запись categories
+PASS Несуществующая запись categories
+PASS Запрет удаления categories
+PASS Список staff
+PASS Нет хеша в staff
+PASS Одна запись staff
+PASS Несуществующая запись staff
+PASS Запрет удаления staff
+PASS Начальные 6 заявок
+PASS Количество равно 6
+PASS Поиск кириллицей
+PASS Поиск без учёта регистра
+PASS SQL-инъекция в поиске
+PASS Инъекция не возвращает строки
+PASS Неверный фильтр status=bad
+PASS Неверный фильтр category_id=x
+PASS Неверный фильтр sort=id%3BDROP%20TABLE%20tickets
+PASS Неверный фильтр order=bad
+PASS Неверный фильтр q%5B%5D=x
+PASS Фильтр статуса и категории
+PASS Совместные фильтры
+PASS Сортировка по ID desc
+PASS ID в обратном порядке
+PASS Список заявок категории
+PASS Неизвестная категория связанных записей
+PASS Защита категории с заявками
+PASS Защита сотрудника с зависимостями
+PASS Оператор не создаёт справочник
+PASS Оператор не меняет сотрудников
+PASS Пустая заявка
+PASS Неверное поле category_id
+PASS Неверное поле due_date
+PASS Неверное поле due_date
+PASS Неверное поле assignee_id
+PASS Неверное поле priority
+PASS Создание оператором
+PASS Location новой заявки
+PASS Дата null сохраняется
+PASS Изменение оператором
+PASS PUT сохраняет остальные поля
+PASS Защита ID и сохранение статуса
+PASS Удаление руководителем
+PASS Удалённая запись недоступна
+PASS Создание categories
+PASS Дубликат categories
+PASS PATCH categories
+PASS PUT categories
+PASS Удаление categories
+PASS Создание staff
+PASS Дубликат staff
+PASS PATCH staff
+PASS PUT staff
+PASS Удаление staff
+PASS Метод не разрешён
+PASS Неизвестный маршрут
+PASS Выход отзывает токен
+PASS Отозванный токен
+PASS Повторный вход
+PASS Выход после повторного входа
+PASS Выход руководителя
+TOTAL 87; FAILED 0

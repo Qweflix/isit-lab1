@@ -1,0 +1,10 @@
+GET /api/tickets/1
+HTTP 200
+X-Cache: MISS
+Content-Type: application/json; charset=utf-8
+{"id":1,"category_id":1,"assignee_id":1,"title":"Не включается рабочий компьютер","description":"После нажатия кнопки питания индикаторы не загораются.","status":"new","priority":"high","due_date":"2026-10-28","created_at":"2026-11-09 11:24:52.6752+00"}
+GET /api/tickets/1
+HTTP 200
+X-Cache: HIT
+Content-Type: application/json; charset=utf-8
+{"id":1,"category_id":1,"assignee_id":1,"title":"Не включается рабочий компьютер","description":"После нажатия кнопки питания индикаторы не загораются.","status":"new","priority":"high","due_date":"2026-10-28","created_at":"2026-11-09 11:24:52.6752+00"}
