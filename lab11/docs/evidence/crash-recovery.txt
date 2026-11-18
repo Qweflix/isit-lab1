@@ -1,0 +1,18 @@
+processing перед SIGKILL: 1
+410a4489b037887a9ad1f83aa5ca4e63d5d2ac3192a052c1adc637712504e276
+{
+    "waiting": 0,
+    "processing": 1,
+    "delayed": 0,
+    "dead": 1
+}
+Восстановлено в очередь: 1
+Готово: 29002b5040f594ba
+2026-11-18T16:46:02+00:00 Готово 29002b5040f594ba (demo)
+Воркер остановлен
+{
+    "waiting": 0,
+    "processing": 0,
+    "delayed": 0,
+    "dead": 1
+}

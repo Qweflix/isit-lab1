@@ -1,0 +1,21 @@
+Очередь работает: push, BLMOVE, ack
+{
+    "push": {
+        "waiting": 1,
+        "processing": 0,
+        "delayed": 0,
+        "dead": 1
+    },
+    "reserve": {
+        "waiting": 0,
+        "processing": 1,
+        "delayed": 0,
+        "dead": 1
+    },
+    "ack": {
+        "waiting": 0,
+        "processing": 0,
+        "delayed": 0,
+        "dead": 1
+    }
+}

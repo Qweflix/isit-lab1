@@ -1,0 +1,10 @@
+Report 12 status
+{"id":12,"requester_id":1,"status":"done","path":"report-12.csv","error":null,"created_at":"2026-11-18 16:47:32.495499+00","finished_at":"2026-11-18 16:47:33.141377+00","download_url":"\/api\/reports\/12\/download"}
+CSV header and rows
+﻿ID;Заявка;Категория;Исполнитель;Статус;Приоритет;Создана
+1;"Не включается рабочий компьютер";Оборудование;"Алексей Смирнов";done;high;"2026-11-18 16:43:40.372144+00"
+2;"Ошибка запуска офисного приложения";"Программное обеспечение";"Мария Десяк";in_progress;medium;"2026-11-18 16:43:40.372144+00"
+CSV byte count
+33045546 storage/reports/report-12.csv
+HTTP download status
+200
