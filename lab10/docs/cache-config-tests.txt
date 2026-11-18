@@ -1,0 +1,2 @@
+PASS APP_DEBUG=0: X-Cache-Mode off игнорируется, второй вызов HIT
+PASS CACHE_ENABLED=0: оба вызова BYPASS, источник вызван дважды

@@ -1,0 +1,173 @@
+GitHub clean clone: isit-10 / cf72608
+Fresh db_data, separate Redis, APP_DEBUG=0
+Созданы 7 таблиц ЛР8, users и auth_tokens; 6 заявок, 2 пользователя.
+Кеш приложения очищен.
+Redis отвечает: PONG; версия 7.4.12
+Вызов 1: MISS, 1000.444 мс; Данные из медленного источника
+Вызов 2: HIT, 0.110 мс; Данные из медленного источника
+TTL demo:slow = 32 секунд
+PASS Вход руководителя
+PASS Открытый токен: 64 hex
+PASS Срок токена около 2 часов
+PASS В ответе входа нет password_hash
+PASS Вход оператора
+PASS Без токена /api/tickets
+PASS Без токена /api/categories
+PASS Без токена /api/staff
+PASS Без токена /api/auth/me
+PASS Без токена /api/unknown
+PASS Поддельный токен
+PASS Неверный пароль
+PASS Неизвестная почта
+PASS Одинаковая ошибка почты и пароля
+PASS SQL-инъекция при входе
+PASS Некорректный JSON
+PASS Массив вместо объекта
+PASS Неверные типы входа
+PASS Пользователь /me
+PASS Нет пароля и хеша в /me
+PASS Список tickets
+PASS Нет хеша в tickets
+PASS Одна запись tickets
+PASS Несуществующая запись tickets
+PASS Запрет удаления tickets
+PASS Список categories
+PASS Нет хеша в categories
+PASS Одна запись categories
+PASS Несуществующая запись categories
+PASS Запрет удаления categories
+PASS Список staff
+PASS Нет хеша в staff
+PASS Одна запись staff
+PASS Несуществующая запись staff
+PASS Запрет удаления staff
+PASS Начальные 6 заявок
+PASS Количество равно 6
+PASS Поиск кириллицей
+PASS Поиск без учёта регистра
+PASS SQL-инъекция в поиске
+PASS Инъекция не возвращает строки
+PASS Неверный фильтр status=bad
+PASS Неверный фильтр category_id=x
+PASS Неверный фильтр sort=id%3BDROP%20TABLE%20tickets
+PASS Неверный фильтр order=bad
+PASS Неверный фильтр q%5B%5D=x
+PASS Фильтр статуса и категории
+PASS Совместные фильтры
+PASS Сортировка по ID desc
+PASS ID в обратном порядке
+PASS Список заявок категории
+PASS Неизвестная категория связанных записей
+PASS Защита категории с заявками
+PASS Защита сотрудника с зависимостями
+PASS Оператор не создаёт справочник
+PASS Оператор не меняет сотрудников
+PASS Пустая заявка
+PASS Неверное поле category_id
+PASS Неверное поле due_date
+PASS Неверное поле due_date
+PASS Неверное поле assignee_id
+PASS Неверное поле priority
+PASS Создание оператором
+PASS Location новой заявки
+PASS Дата null сохраняется
+PASS Изменение оператором
+PASS PUT сохраняет остальные поля
+PASS Защита ID и сохранение статуса
+PASS Удаление руководителем
+PASS Удалённая запись недоступна
+PASS Создание categories
+PASS Дубликат categories
+PASS PATCH categories
+PASS PUT categories
+PASS Удаление categories
+PASS Создание staff
+PASS Дубликат staff
+PASS PATCH staff
+PASS PUT staff
+PASS Удаление staff
+PASS Метод не разрешён
+PASS Неизвестный маршрут
+PASS Redis доступен
+PASS Кеш сохраняет false
+PASS Кеш сохраняет пустой массив
+PASS TTL с разбросом 10–11 секунд
+PASS TTL удаляет запись
+PASS Повреждённый JSON безопасно заменяется
+PASS Первый MISS /api/categories
+PASS Повторный HIT /api/categories
+PASS Первый MISS /api/tickets/1
+PASS Повторный HIT /api/tickets/1
+PASS Первый MISS /api/tickets?limit=2&page=1
+PASS Повторный HIT /api/tickets?limit=2&page=1
+PASS Первый MISS /api/reports/summary
+PASS Повторный HIT /api/reports/summary
+PASS Порядок query-параметров не меняет ключ
+PASS Страница включена в ключ
+PASS Неверная пагинация page=0
+PASS Неверная пагинация page=abc
+PASS Неверная пагинация limit=101
+PASS Неверная пагинация limit=0
+PASS Отладочный обход кеша
+PASS POST для проверки кеша
+PASS POST инвалидирует список
+PASS POST инвалидирует отчёт
+PASS PATCH инвалидирует карточку
+PASS PATCH инвалидирует список
+PASS PATCH инвалидирует отчёт
+PASS DELETE не оставляет старую карточку
+PASS DELETE инвалидирует список
+PASS DELETE инвалидирует отчёт
+PASS POST категории инвалидирует справочник
+PASS PATCH категории обновляет справочник
+PASS PATCH категории обновляет названия отчёта
+PASS DELETE категории инвалидирует справочник
+PASS Данные кеша доступны обеим разрешённым ролям
+PASS Прогретый кеш не обходит авторизацию
+PASS Очистка ограничена префиксом
+PASS Выход отзывает токен
+PASS Отозванный токен
+PASS Повторный вход
+PASS Выход после повторного входа
+PASS Выход руководителя
+TOTAL 124; FAILED 0
+PASS Пароль хранится хешем и проверяется password_verify
+PASS В БД найден sha256 выданного токена
+PASS Открытый токен в БД отсутствует
+TOTAL 3; FAILED 0
+PASS APP_DEBUG=0: X-Cache-Mode off игнорируется, второй вызов HIT
+No syntax errors detected in app/helpers.php
+No syntax errors detected in app/autoload.php
+No syntax errors detected in app/Models/TicketRepository.php
+No syntax errors detected in app/Models/ReportRepository.php
+No syntax errors detected in app/Models/PgRepository.php
+No syntax errors detected in app/Models/CategoryRepository.php
+No syntax errors detected in app/Models/CachedTicketRepository.php
+No syntax errors detected in app/Models/CachedCategoryRepository.php
+No syntax errors detected in app/Core/Router.php
+No syntax errors detected in app/Core/DatabaseUnavailable.php
+No syntax errors detected in app/Core/Database.php
+No syntax errors detected in app/Core/Cache.php
+No syntax errors detected in app/Core/Auth.php
+No syntax errors detected in app/Controllers/HomeController.php
+No syntax errors detected in app/Controllers/Api/TicketApiController.php
+No syntax errors detected in app/Controllers/Api/StaffApiController.php
+No syntax errors detected in app/Controllers/Api/ResourceApiController.php
+No syntax errors detected in app/Controllers/Api/ReportApiController.php
+No syntax errors detected in app/Controllers/Api/CategoryApiController.php
+No syntax errors detected in app/Controllers/Api/AuthController.php
+No syntax errors detected in bin/reset-db.php
+No syntax errors detected in bin/redis-check.php
+No syntax errors detected in bin/load-bigdata.php
+No syntax errors detected in bin/cache-demo.php
+No syntax errors detected in bin/bootstrap.php
+No syntax errors detected in bin/benchmark.php
+No syntax errors detected in config/app.php
+No syntax errors detected in public/index.php
+No syntax errors detected in routes/web.php
+No syntax errors detected in tests/storage-tests.php
+No syntax errors detected in tests/cache-config-tests.php
+No syntax errors detected in tests/api-tests.php
+PASS APP_DEBUG=0 + X-Cache-Mode off -> MISS
+PASS APP_DEBUG=0 + X-Cache-Mode off -> HIT
+PASS Clean clone browser: login, 6 records, reload, logout

@@ -1,0 +1,4 @@
+Redis отвечает: PONG; версия 7.4.12
+Неверный порт (REDIS_PORT=1):
+Redis недоступен; приложение работает без кеша (BYPASS).
+Redis unavailable; cache bypassed

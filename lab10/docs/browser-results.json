@@ -1,0 +1,146 @@
+[
+  {
+    "scenario": "A01 Форма входа",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "scenario": "A02 Неверный пароль: форма и HTTP 401",
+    "expected": 401,
+    "actual": 401,
+    "passed": true
+  },
+  {
+    "scenario": "A03 Вход руководителя и список",
+    "expected": 6,
+    "actual": 6,
+    "passed": true
+  },
+  {
+    "scenario": "A04 Поиск кириллицей",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "scenario": "A05 Фильтрация",
+    "expected": 2,
+    "actual": 2,
+    "passed": true
+  },
+  {
+    "scenario": "A06 Создание со сроком и исполнителем",
+    "expected": 201,
+    "actual": 201,
+    "passed": true
+  },
+  {
+    "scenario": "A07 Изменение темы",
+    "expected": 1,
+    "actual": 1,
+    "passed": true
+  },
+  {
+    "scenario": "A08 Изменение статуса",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "scenario": "A09 Удаление руководителем",
+    "expected": 6,
+    "actual": 6,
+    "passed": true
+  },
+  {
+    "scenario": "A10 Ошибки 422 у полей",
+    "expected": 422,
+    "actual": 422,
+    "passed": true
+  },
+  {
+    "scenario": "A11 Выход",
+    "expected": null,
+    "actual": null,
+    "passed": true
+  },
+  {
+    "scenario": "A12 Оператор не видит удаление",
+    "expected": 0,
+    "actual": 0,
+    "passed": true
+  },
+  {
+    "scenario": "A13 Прямой запрос удаления оператором",
+    "expected": 403,
+    "actual": 403,
+    "passed": true
+  },
+  {
+    "scenario": "A14 Повторный вход",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "scenario": "A15 Истёкший на сервере токен",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "scenario": "A16 Пропажа сети",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "scenario": "A17 Восстановление связи",
+    "expected": 6,
+    "actual": 6,
+    "passed": true
+  },
+  {
+    "scenario": "A18 Пустой результат",
+    "expected": 0,
+    "actual": 0,
+    "passed": true
+  },
+  {
+    "scenario": "A19 Остановлена PostgreSQL",
+    "expected": 503,
+    "actual": 503,
+    "passed": true
+  },
+  {
+    "scenario": "A20 Восстановление PostgreSQL",
+    "expected": 6,
+    "actual": 6,
+    "passed": true
+  },
+  {
+    "scenario": "A21 Остановлен PHP-сервер",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "scenario": "A22 Восстановление PHP-сервера",
+    "expected": 6,
+    "actual": 6,
+    "passed": true
+  },
+  {
+    "scenario": "A23 Защита DOM от XSS",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "scenario": "A24 Нет исключений JavaScript",
+    "expected": [],
+    "actual": [],
+    "passed": true
+  }
+]

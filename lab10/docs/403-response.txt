@@ -1,0 +1,4 @@
+DELETE /api/tickets/1
+Authorization: Bearer [скрыт]
+HTTP 403
+{"error":"Недостаточно прав для этого действия","errors":{}}
