@@ -1,0 +1,39 @@
+                                         version                                          
+------------------------------------------------------------------------------------------
+ PostgreSQL 16.15 on x86_64-pc-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+(1 row)
+
+   table_name   
+----------------
+ auth_tokens
+ categories
+ comments
+ staff
+ staff_profiles
+ tags
+ ticket_tags
+ tickets
+ users
+(9 rows)
+
+ tickets 
+---------
+       6
+(1 row)
+
+   role   | password_hash_length 
+----------+----------------------
+ manager  |                   60
+ operator |                   60
+(2 rows)
+
+ sha256_tokens | total 
+---------------+-------
+             3 |     3
+(1 row)
+
+ foreign_keys 
+--------------
+           10
+(1 row)
+

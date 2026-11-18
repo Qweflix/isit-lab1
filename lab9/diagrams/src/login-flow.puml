@@ -1,0 +1,38 @@
+@startuml
+skinparam defaultFontName DejaVu Sans
+actor Пользователь
+participant "Клиент ЛР5\nFetch API" as Client
+participant "PHP Router\nAuthController" as Server
+participant "Auth / PgRepository\nPDO" as Model
+database "PostgreSQL ЛР8\nusers, auth_tokens\nзаявки и справочники" as DB
+Пользователь -> Client: Email и пароль
+Client -> Server: POST /api/auth/login
+Server -> DB: SELECT пользователя (параметр email)
+DB --> Server: password_hash
+Server -> Server: password_verify; random_bytes
+Server -> DB: INSERT sha256(token), expires_at
+Server --> Client: 200 token, expires_at, user без хеша
+Client -> Client: localStorage.authToken
+Client -> Server: GET /api/tickets\nAuthorization: Bearer token
+Server -> Model: Проверить хеш и срок токена
+Model -> DB: SELECT auth_tokens JOIN users
+alt Токен отсутствует или истёк
+Server --> Client: 401; очистить токен, показать вход
+else Доступ разрешён
+Model -> DB: Подготовленный SELECT заявок
+DB --> Model: Строки PostgreSQL
+Model --> Server: Массив записей
+Server --> Client: 200 JSON
+end
+Client -> Server: DELETE /api/tickets/{id}
+Server -> Model: requireRole('manager')
+alt Оператор
+Server --> Client: 403 Недостаточно прав
+else Руководитель
+Model -> DB: DELETE WHERE id=:id
+Server --> Client: 204
+end
+Client -> Server: POST /api/auth/logout
+Server -> DB: DELETE хеша текущего токена
+Server --> Client: 204; очистить localStorage
+@enduml
