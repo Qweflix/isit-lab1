@@ -1,0 +1,14 @@
+PATCH /api/tickets/2 (worker stopped)
+HTTP/1.1 200 OK
+Host: 127.0.0.1:8088
+Date: Wed, 18 Nov 2026 16:48:06 GMT
+Connection: close
+X-Powered-By: PHP/8.3.36
+X-Job-Id: e9bcc26ce9088145
+Content-Type: application/json; charset=utf-8
+
+{"id":2,"category_id":2,"assignee_id":2,"title":"Ошибка запуска офисного приложения","description":"При открытии документа появляется сообщение об ошибке лицензии.","status":"done","priority":"medium","due_date":"2026-10-29","created_at":"2026-11-18 16:43:40.372144+00"}
+Redis LRANGE queue:default 0 -1
+{"id":"e9bcc26ce9088145","type":"notification","payload":{"ticket_id":2,"status":"done","actor_id":2},"attempts":0,"created_at":"2026-11-18T16:48:06+00:00"}
+Notifications for ticket 2 before worker
+0

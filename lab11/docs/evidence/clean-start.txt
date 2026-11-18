@@ -1,0 +1,25 @@
+PHP 8.3.36 (cli) (built: Nov  5 2026 07:26:42) (NTS)
+Copyright (c) The PHP Group
+Redis 1 7.4.12
+Очередь работает: push, BLMOVE, ack
+{
+    "push": {
+        "waiting": 1,
+        "processing": 0,
+        "delayed": 0,
+        "dead": 0
+    },
+    "reserve": {
+        "waiting": 0,
+        "processing": 1,
+        "delayed": 0,
+        "dead": 0
+    },
+    "ack": {
+        "waiting": 0,
+        "processing": 0,
+        "delayed": 0,
+        "dead": 0
+    }
+}
+GET /api/tickets: 200

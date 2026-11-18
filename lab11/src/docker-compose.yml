@@ -1,0 +1,67 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: supportdb
+      POSTGRES_USER: support
+      POSTGRES_PASSWORD: support-local
+    ports:
+      - "${DB_PORT:-5433}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./sql/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+      - ./sql/seed.sql:/docker-entrypoint-initdb.d/02-seed.sql:ro
+      - ./sql/async.sql:/docker-entrypoint-initdb.d/03-async.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U support -d supportdb"]
+      interval: 2s
+      retries: 30
+  redis:
+    image: redis:7
+    ports:
+      - "${REDIS_PORT:-6380}:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 2s
+      retries: 30
+  app:
+    image: lab11-php
+    build: &php_build
+      context: .
+      args:
+        HTTP_PROXY: ${HTTP_PROXY:-}
+        HTTPS_PROXY: ${HTTPS_PROXY:-}
+        http_proxy: ${http_proxy:-}
+        https_proxy: ${https_proxy:-}
+    command: php -S 0.0.0.0:8000 -t public public/index.php
+    ports:
+      - "${APP_PORT:-8088}:8000"
+    environment: &app_env
+      DB_HOST: db
+      DB_NAME: supportdb
+      DB_USER: support
+      DB_PASSWORD: support-local
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+    volumes:
+      - .:/app
+      - ../docs:/lab11-docs
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+  worker:
+    image: lab11-php
+    build: *php_build
+    command: php bin/worker.php
+    environment: *app_env
+    volumes:
+      - .:/app
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+volumes:
+  pgdata:

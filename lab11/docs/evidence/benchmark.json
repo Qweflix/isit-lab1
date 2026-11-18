@@ -1,0 +1,82 @@
+[
+  {
+    "mode": "async",
+    "run": 1,
+    "report_id": 12,
+    "http_ms": 15.87,
+    "wait_ms": 706.98,
+    "total_ms": 722.85
+  },
+  {
+    "mode": "async",
+    "run": 2,
+    "report_id": 13,
+    "http_ms": 23.46,
+    "wait_ms": 727.58,
+    "total_ms": 751.04
+  },
+  {
+    "mode": "async",
+    "run": 3,
+    "report_id": 14,
+    "http_ms": 14.71,
+    "wait_ms": 739.57,
+    "total_ms": 754.29
+  },
+  {
+    "mode": "async",
+    "run": 4,
+    "report_id": 15,
+    "http_ms": 14.57,
+    "wait_ms": 742.33,
+    "total_ms": 756.9
+  },
+  {
+    "mode": "async",
+    "run": 5,
+    "report_id": 16,
+    "http_ms": 16.3,
+    "wait_ms": 586.84,
+    "total_ms": 603.14
+  },
+  {
+    "mode": "sync",
+    "run": 1,
+    "report_id": 17,
+    "http_ms": 731.34,
+    "wait_ms": 0.02,
+    "total_ms": 731.36
+  },
+  {
+    "mode": "sync",
+    "run": 2,
+    "report_id": 18,
+    "http_ms": 2726.36,
+    "wait_ms": 0.02,
+    "total_ms": 2726.38
+  },
+  {
+    "mode": "sync",
+    "run": 3,
+    "report_id": 19,
+    "http_ms": 511.72,
+    "wait_ms": 0.13,
+    "total_ms": 511.85
+  },
+  {
+    "mode": "sync",
+    "run": 4,
+    "report_id": 20,
+    "http_ms": 635.83,
+    "wait_ms": 0.02,
+    "total_ms": 635.85
+  },
+  {
+    "mode": "sync",
+    "run": 5,
+    "report_id": 21,
+    "http_ms": 579.68,
+    "wait_ms": 0.02,
+    "total_ms": 579.7
+  }
+]

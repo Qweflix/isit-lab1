@@ -1,0 +1,13 @@
+processing перед SIGTERM: 1
+966beff8aa348cc2affcdeca99dc64f0b5e696013e5078256795df7c8a75c527
+0
+Восстановлено в очередь: 0
+Готово: 888c254bab9102dd
+2026-11-18T16:46:19+00:00 Готово 888c254bab9102dd (demo)
+Воркер остановлен
+{
+    "waiting": 0,
+    "processing": 0,
+    "delayed": 0,
+    "dead": 1
+}
